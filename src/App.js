@@ -1,10 +1,14 @@
 import logo from './logo.svg';
-import Footer from './components/footer/Footer';
+import Header from './components/header/Header.jsx';
+import Footer from './components/footer/Footer.jsx';
 import './App.css';
 
 function App() {
   return (
-    <Footer />
+    <div>
+      <Header />
+      <Footer />
+    </div>
   );
 }
 
