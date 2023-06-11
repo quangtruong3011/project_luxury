@@ -36,7 +36,7 @@ const Footer = () => {
                             <div className="col-span-5">
                                 <div className="img-logo">
                                     <a href="#">
-                                        <img src="./img/footer/logo-footer.png" alt="logo-footer" />
+                                        <img src="/" alt="logo-footer" />
                                     </a>
                                 </div>
                                 <div className="text">
@@ -82,7 +82,7 @@ const Footer = () => {
                                 <h4>TRIPADVISOR</h4>
                                 <div>
                                     <p>Now with hotel reviews by</p>
-                                    <img src="./img/footer/tripadvisor.png" />
+                                    <img src="/" />
                                     <span>
                                         {/* Đánh giá sao */}
                                     </span>
