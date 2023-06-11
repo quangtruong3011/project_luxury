@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import Header from './components/header/Header.jsx';
 import Footer from './components/footer/Footer.jsx';
 import './App.css';
