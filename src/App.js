@@ -5,11 +5,7 @@ import './App.css';
 
 function App({ isMobileDevice }) {
   return (
-    <Layout isMobileDevice={isMobileDevice}>
-      <div>
-        I love you
-      </div>
-    </Layout>
+    <></>
   );
 }
 
