@@ -1,11 +1,11 @@
-import logo from './logo.svg';
-import React from 'react'
-import Layout from './common/Layout'
-import './App.css';
+import React from 'react';
+import Home from './page/home/Home';
 
-function App({ isMobileDevice }) {
+function App() {
   return (
-    <></>
+    <>
+      <Home />
+    </>
   );
 }
 
