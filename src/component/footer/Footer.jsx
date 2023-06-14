@@ -7,9 +7,9 @@ const Footer = () => {
                 <div className="container mx-auto">
                     <div className="grid grid-cols-4">
                         <div className="col-span-3">
-                            <div className="flex items-center">
+                            <div className="flex items-center justify-evenly">
                                 <h4 className="text-white text-2xl align-middle font-normal">
-                                    <i class="fa-regular fa-envelope"></i>
+                                    <i class="fa-regular fa-envelope border-[3px] border-[#e1bd85] text-[#e1bd85] p-3 rounded-full mr-3"></i>
                                     NEWS & OFFERS
                                 </h4>
                                 <div className="ml-[65px]">
@@ -21,12 +21,12 @@ const Footer = () => {
                             </div>
                         </div>
                         <div className="col-span-1">
-                            <div className="social">
-                                <a className="bg-transparent text-sm text-white border-2 border-white hover:border-[#e1bd85] inline-block w-8 h-8 mt-5 text-center mr-5 rounded-full" href="#"><i class="fa-brands fa-pinterest text-lg"></i></a>
-                                <a className="bg-transparent text-sm text-white border-2 border-white hover:border-[#e1bd85] inline-block w-8 h-8 mt-5 text-center mr-5 rounded-full" href="#"><i class="fa-brands fa-facebook-f text-lg"></i></a>
-                                <a className="bg-transparent text-sm text-white border-2 border-white hover:border-[#e1bd85] inline-block w-8 h-8 mt-5 text-center mr-5 rounded-full" href="#"><i class="fa-brands fa-twitter text-lg"></i></a>
-                                <a className="bg-transparent text-sm text-white border-2 border-white hover:border-[#e1bd85] inline-block w-8 h-8 mt-5 text-center mr-5 rounded-full" href="#"><i class="fa-brands fa-google text-lg"></i></a>
-                                <a className="bg-transparent text-sm text-white border-2 border-white hover:border-[#e1bd85] inline-block w-8 h-8 mt-5 text-center mr-5 rounded-full" href="#"><i class="fa-brands fa-instagram text-lg"></i></a>
+                            <div className="">
+                                <a className="text-xl text-white mr-3" href="#"><i class="fa-brands fa-pinterest border hover:border-[#e1bd85] rounded-full p-3"></i></a>
+                                <a className="text-xl text-white mr-3" href="#"><i class="fa-brands fa-facebook border hover:border-[#e1bd85] rounded-full p-3"></i></a>
+                                <a className="text-xl text-white mr-3" href="#"><i class="fa-brands fa-twitter border hover:border-[#e1bd85] rounded-full p-3"></i></a>
+                                <a className="text-xl text-white mr-3" href="#"><i class="fa-brands fa-google border hover:border-[#e1bd85] rounded-full p-3"></i></a>
+                                <a className="text-xl text-white" href="#"><i class="fa-brands fa-instagram border hover:border-[#e1bd85] rounded-full p-3"></i></a>
                             </div>
                         </div>
                     </div>
@@ -60,7 +60,7 @@ const Footer = () => {
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 text-white mr-1">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                                         </svg>
-                                        <a className="text-[#acacac] hover: text-sm" href="#">hello@theloutshotel.com</a>
+                                        <a className="text-[#acacac] hover:text-[#e1bd85] text-sm" href="#">hello@theloutshotel.com</a>
                                     </p>
                                 </div>
                             </div>
