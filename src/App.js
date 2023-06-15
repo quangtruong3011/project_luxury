@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./common/Layout";
-import LoginContainer from "./components/login/LoginContainer";
-import RegisterContainer from "./components/register/RegisterContainer";
+import Login from "./components/login/Login";
+import Register from "./components/register/Register";
 import "./App.css";
 
 function App({ isMobileDevice }) {
@@ -10,8 +10,8 @@ function App({ isMobileDevice }) {
     <BrowserRouter>
       <Layout isMobileDevice={isMobileDevice}>
         <Routes>
-          <Route path="/" element={<LoginContainer />} />
-          <Route path="/register" element={<RegisterContainer />} />
+          <Route path="/" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </Layout>
     </BrowserRouter>
