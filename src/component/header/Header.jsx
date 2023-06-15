@@ -1,13 +1,11 @@
 import "./Header.css";
 import CurrencyDropdown from "./CurrencyDropdown";
 import LanguageDropdown from "./LanguageDropdown";
-import Nav from "../nav/Nav";
-
 
 const Header = () => {
     return (
         <header>
-            <div className="header-top bg-blue-500">
+            <div className="header-top bg-transparent">
                 <div className="container mx-auto flex justify-between">
                     <div className="header-left flex">
                         <span className="flex items-center mr-3">
@@ -37,30 +35,32 @@ const Header = () => {
                         </span>
                         <CurrencyDropdown />
                         <LanguageDropdown />
-                        {/* <div className="dropdown currency">
-                            <span>USD</span>
-                            <ul>
-                                <li className="active">USD</li>
-                                <li>VND</li>
-                            </ul>
-                        </div>
-                        <div className="dropdown laguage">
-                            <span>ENG</span>
-                            <ul>
-                                <li className="active">ENG</li>
-                                <li>VN</li>
-                            </ul>
-                        </div> */}
                     </div>
                 </div>
             </div>
-            <div className="Header-content">
-                <div className="container mx-auto">
-                    <div className="header-logo">
+            <div className="Header-content bg-white py-3">
+                <div className="container mx-auto flex items-center">
+                    <div className="header-logo mr-10 py-2">
                         <img src="https://landing.engotheme.com/html/lotus/demo/images/logo-header.png" alt="" />
                     </div>
                     <nav className="header-menu">
-                        <Nav />
+                        <ul className="flex">
+                            <li className="">
+                                <a className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm" href="#">HOME</a>
+                            </li>
+                            <li>
+                                <a className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm" href="#">ABOUT</a>
+                            </li>
+                            <li>
+                                <a className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm" href="#">ROOM</a>
+                            </li>
+                            <li>
+                                <a className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm" href="">BLOG</a>
+                            </li>
+                            <li>
+                                <a className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm" href="#">CONTACT</a>
+                            </li>
+                        </ul>
                     </nav>
                 </div>
             </div>

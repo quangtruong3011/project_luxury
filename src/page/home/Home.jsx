@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Header from "../../component/header/Header";
 import Footer from "../../component/footer/Footer";
 import RoomList from '../../component/roomList/RoomList';
-
+import SlideShow from './SlideShow';
 import "./Home.css";
 
 
@@ -12,7 +12,9 @@ const Home = () => {
         <>
             <Header />
             <main>
-                <section className="section-slider"></section>
+                <section className="section-slider">
+                    <SlideShow />
+                </section>
                 <section className="section-check-availability">
                     <div className="container">
                         <div className="check-availability">
