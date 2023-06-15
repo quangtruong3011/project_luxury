@@ -1,20 +1,10 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./common/Layout";
-import LoginContainer from "./components/login/LoginContainer";
-import RegisterContainer from "./components/register/RegisterContainer";
-import "./App.css";
+import React from 'react'
+import Home from './page/home/Home';
+import './App.css';
 
-function App({ isMobileDevice }) {
+function App() {
   return (
-    <BrowserRouter>
-      <Layout isMobileDevice={isMobileDevice}>
-        <Routes>
-          <Route path="/" element={<LoginContainer />} />
-          <Route path="/register" element={<RegisterContainer />} />
-        </Routes>
-      </Layout>
-    </BrowserRouter>
+    <Home />
   );
 }
 
