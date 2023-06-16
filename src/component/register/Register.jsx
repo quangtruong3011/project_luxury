@@ -1,54 +1,40 @@
-import { useState } from 'react';
+import React, {useState, useEffect} from "react";
 
-function SignupForm() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    password: ''
-  });
+function RegisterContainer() {
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Lưu thông tin người dùng vào file JSON
-    saveFormDataToJson(formData);
-    // Xóa dữ liệu trong form
-    setFormData({
-      name: '',
-      email: '',
-      password: ''
-    });
-  };
-
-  const handleChange = (event) => {
-    setFormData({
-      ...formData,
-      [event.target.name]: event.target.value
-    });
-  }
-
+        const [email, setEmail] = useState('');
+        const [isValidEmail, setIsValidEmail] = useState(true);
+      
+        const handleEmailChange = (event) => {
+          const enteredEmail = event.target.value;
+          setEmail(enteredEmail);
+        };
+      
+        const validateEmail = () => {
+            const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+            const isValid = emailRegex.test(email);
+            setIsValidEmail(isValid);
+          };
+    
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="name">Tên:</label>
-        <input id="name" type="text" name="name" value={formData.name} onChange={handleChange} />
-      </div>
-      <div>
-        <label htmlFor="email">Email:</label>
-        <input id="email" type="email" name="email" value={formData.email} onChange={handleChange} />
-      </div>
-      <div>
-        <label htmlFor="password">Mật khẩu:</label>
-        <input id="password" type="password" name="password" value={formData.password} onChange={handleChange} />
-      </div>
-      <button type="submit">Đăng ký</button>
-    </form>
+    <div>
+      <form className="flex flex-col items-center" action="login">
+        <h1
+          className="text-5xl font-semibold"
+          style={{ fontFamily: "Hind Siliguri" }}
+        >
+          REGISTER FORM
+        </h1>
+        <input type="text" placeholder="User name*" />
+        <input type="email" value={email} onChange={handleEmailChange} placeholder="Email*"/>
+        {!isValidEmail && <p className="text-red-500">Invalid email</p>}
+        <input type="password" placeholder="Password*" />
+        <button className="text-lg" onClick={validateEmail}>
+          LOGIN
+        </button>
+      </form>
+    </div>
   );
 }
 
-function saveFormDataToJson(formData) {
-  const users = JSON.parse(localStorage.getItem('users')) || [];
-  users.push(formData);
-  localStorage.setItem('users', JSON.stringify(users));
-}
-
-export default SignupForm;
+export default RegisterContainer;
