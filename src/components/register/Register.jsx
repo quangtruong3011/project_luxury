@@ -43,10 +43,10 @@ function Register() {
   };
 
   return (
-    <section className="relative pb-32 pt-56">
+    <section className="relative pb-28 pt-28">
       <div className="bgOverlay absolute top-0 z-0 h-full w-full bg-[rgba(72,72,72,0.3)]"></div>
       <form
-        className="relative z-10 mx-auto ml-auto mr-auto flex w-96 flex-col items-center gap-4 font-[Montserrat] text-white"
+        className="relative z-10 mx-auto flex w-96 flex-col items-center gap-4 font-[Montserrat] text-white"
         action="register"
         onSubmit={handleSubmit}
       >
