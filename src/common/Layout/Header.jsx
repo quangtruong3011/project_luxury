@@ -1,4 +1,5 @@
 import "./Header.css";
+import { Routes, Route, Link } from 'react-router-dom';
 import CurrencyDropdown from "./CurrencyDropdown";
 import LanguageDropdown from "./LanguageDropdown";
 
@@ -30,8 +31,8 @@ const Header = () => {
                     </div>
                     <div className="header-right flex">
                         <span className="login-register">
-                            <a className="text-sm text-white px-2" href="#">LOGIN</a>
-                            <a className="text-sm text-white px-2" href="#">REGISTER</a>
+                            <Link to="/login" className="text-sm text-white px-2">LOGIN</Link>
+                            <Link to="/register" className="text-sm text-white px-2">REGISTER</Link>
                         </span>
                         <CurrencyDropdown />
                         <LanguageDropdown />
@@ -45,8 +46,8 @@ const Header = () => {
                     </div>
                     <nav className="header-menu">
                         <ul className="flex">
-                            <li className="">
-                                <a className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm" href="#">HOME</a>
+                            <li>
+                                <Link to="/" className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm">HOME</Link>
                             </li>
                             <li>
                                 <a className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm" href="#">ABOUT</a>
