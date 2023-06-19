@@ -1,4 +1,5 @@
 import "./Footer.css";
+import footerLogo from "../../common/Layout/img/footer-logo.png"
 
 const Footer = () => {
     return (
@@ -39,7 +40,7 @@ const Footer = () => {
                             <div className="flex justify-center items-center mt-5">
                                 <div className="img mr-10">
                                     <a href="#">
-                                        <img src="https://landing.engotheme.com/html/lotus/demo/images/logo-footer.png" alt="" />
+                                        <img className="w-[153px]" src={footerLogo} alt="" />
                                     </a>
                                 </div>
                                 <div className="text">

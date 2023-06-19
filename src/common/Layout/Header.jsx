@@ -2,6 +2,7 @@ import "./Header.css";
 import { Routes, Route, Link } from 'react-router-dom';
 import CurrencyDropdown from "./CurrencyDropdown";
 import LanguageDropdown from "./LanguageDropdown";
+import headerLogo from "../../common/Layout/img/header-logo.png"
 
 const Header = () => {
     return (
@@ -41,8 +42,8 @@ const Header = () => {
             </div>
             <div className="Header-content bg-white py-3">
                 <div className="container mx-auto flex items-center">
-                    <div className="header-logo mr-10 py-2">
-                        <img src="https://landing.engotheme.com/html/lotus/demo/images/logo-header.png" alt="" />
+                    <div className="header-logo w-[155px] mr-10 py-2">
+                        <img src={headerLogo} alt="" />
                     </div>
                     <nav className="header-menu">
                         <ul className="flex">
@@ -50,16 +51,16 @@ const Header = () => {
                                 <Link to="/" className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm">HOME</Link>
                             </li>
                             <li>
-                                <a className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm" href="#">ABOUT</a>
+                                <Link to="/" className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm">ABOUT</Link>
                             </li>
                             <li>
-                                <a className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm" href="#">ROOM</a>
+                                <Link to="/" className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm">ROOM</Link>
                             </li>
                             <li>
-                                <a className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm" href="">BLOG</a>
+                                <Link to="/" className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm">BLOG</Link>
                             </li>
                             <li>
-                                <a className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm" href="#">CONTACT</a>
+                                <Link to="/" className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm">CONTACT</Link>
                             </li>
                         </ul>
                     </nav>
