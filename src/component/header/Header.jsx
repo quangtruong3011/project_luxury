@@ -49,13 +49,13 @@ const Header = () => {
                                 <a className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm" href="#">HOME</a>
                             </li>
                             <li>
-                                <a className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm" href="#">ABOUT</a>
-                            </li>
-                            <li>
                                 <a className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm" href="#">ROOM</a>
                             </li>
                             <li>
-                                <a className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm" href="">BLOG</a>
+                                <a className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm" href="#">BLOG</a>
+                            </li>
+                            <li>
+                                <a className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm" href="">ABOUT</a>
                             </li>
                             <li>
                                 <a className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm" href="#">CONTACT</a>
