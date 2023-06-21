@@ -4,6 +4,7 @@ import Layout from "./common/Layout";
 import Home from "./components/home/Home";
 import Login from "./components/login/Login";
 import Register from "./components/register/Register";
+import RoomDetail from "./components/room-detail/RoomDetail";
 import "./App.css";
 
 function App({ isMobileDevice }) {
@@ -14,6 +15,7 @@ function App({ isMobileDevice }) {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/room-detail" element={<RoomDetail />} />
         </Routes>
       </Layout>
     </BrowserRouter>

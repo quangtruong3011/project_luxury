@@ -1,0 +1,63 @@
+.room-detail {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.bg-16 {
+    background-image: url('https://landing.engotheme.com/html/lotus/demo/images/banner/img-16.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* .awe-overlay {
+    position: absolute;
+    width: 100%;
+    height: 36%;
+    background-color: rgba(72, 72, 72, 0.3);
+    top: 0;
+    left: 0;
+    z-index: 0;
+} */
+
+.sub-banner {
+    position: relative;
+}
+
+.contents {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.sub-banner .text {
+    padding-bottom: 50px;
+}
+
+.sub-banner .text h2 {
+    margin-top: 70px;
+    margin-bottom: 0;
+    color: #fff;
+    font-size: 35.68px;
+    text-transform: uppercase;
+}
+
+.sub-banner .text p {
+    margin-bottom: 0;
+    color: #fff;
+    font-size: 20px;
+    line-height: 1.7em;
+    letter-spacing: .02em;
+}
+
+.room-detail_book {
+    background-color: #f1f1f1;
+}
+
+.icon-logo {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    border: 0;
+}
