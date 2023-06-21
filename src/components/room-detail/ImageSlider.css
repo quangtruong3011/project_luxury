@@ -1,7 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap");
 .image-slider {
     display: flex;
     align-items: center;
-    justify-content: center;
     position: relative;
 }
 
@@ -17,7 +17,6 @@
     color: #fff;
     padding: 15px 20px;
     width: 870px;
-    align-items: center;
     text-align: start;
 }
 
@@ -53,7 +52,7 @@
     position: absolute;
     z-index: 10;
     top: 50%;
-    left: 8%;
+    left: 1.2%;
     font-size: 13px;
     width: 35px;
     height: 35px;

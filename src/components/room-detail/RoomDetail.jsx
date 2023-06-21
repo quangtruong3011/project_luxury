@@ -2,6 +2,7 @@ import React from 'react'
 import "./RoomDetail.css";
 import ImageSlider from './ImageSlider';
 import RoomDetailForm from './RoomDetailForm';
+import RoomDetailTab from './RoomDetailTab';
 function RoomDetail() {
     const images = [
         'https://landing.engotheme.com/html/lotus/demo/images/room/detail/lager/img-1.jpg',
@@ -13,7 +14,7 @@ function RoomDetail() {
 
     ];
     return (
-        <div>
+        <div className='detail-content'>
             <section className="pt-20 bg-16 ">
                 <div className='awe-overlay'></div>
                 <div className='sub-banner'>
@@ -28,12 +29,12 @@ function RoomDetail() {
             <section className='section-room-detail bg-white pb-24'>
                 <div className='container'>
                     <div className='room-detail'>
-                        <div className='grid grid-cols-4'>
-                            <div className='col-span-3'>
+                        <div className='grid grid-cols-3'>
+                            <div className='col-span-2'>
                                 <ImageSlider images={images} />
                             </div>
-                            <div className='col-span-1'>
-                                <div className='room-detail_book mt-11'>
+                            <div className='col-span-1 '>
+                                <div className='room-detail_book mt-11 p-5 pt-0 pb-3'>
                                     <div className='room-detail_total py-4 px-4 text-center border-b-2 border-y-neutral-200'>
                                         <img className='icon-logo' src="#" alt="logo" />
                                         <h6 className='text-[#232323] text-base font-bold mt-2.5'>STARTING ROOM FROM</h6>
@@ -43,13 +44,16 @@ function RoomDetail() {
                                         </p>
                                     </div>
                                     <div className='room-detail_form'>
-                                         <RoomDetailForm />
+                                        <RoomDetailForm />
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </section>
+            <section>
+               <RoomDetailTab/>
             </section>
         </div>
     )
