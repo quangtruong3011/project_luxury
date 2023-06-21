@@ -9,7 +9,7 @@ import "./Home.css";
 
 const Home = () => {
     return (
-        <>
+        <div className='home'>
             {/* <Header /> */}
             <main>
                 <section className="section-slider">
@@ -274,7 +274,7 @@ const Home = () => {
                 </section>
             </main>
             {/* <Footer /> */}
-        </>
+        </div>
     )
 }
 
