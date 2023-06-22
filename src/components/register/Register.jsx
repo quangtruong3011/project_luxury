@@ -78,7 +78,7 @@ function Register() {
           value={formData.password}
           onChange={handleChange}
         />
-        <button className="registerBtn my-4 w-44 bg-[#e1bd85] py-2.5 text-base text-white border-2 border-[#e1bd85] hover:bg-white hover:text-[#e1bd85]" onClick={validateEmail}>
+        <button className="registerBtn font-semibold my-4 w-44 bg-[#e1bd85] py-2.5 text-base text-white border-2 border-[#e1bd85] hover:bg-white hover:text-[#e1bd85]" onClick={validateEmail}>
           REGISTER
         </button>
       </form>
