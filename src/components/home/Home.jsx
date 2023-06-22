@@ -68,7 +68,7 @@ const Home = () => {
                         </div>
                     </div>
                 </section>
-                <section className="section-our-best mt-10 mb-[70px]">
+                <section className="section-our-best mt-10 mb-[70px] bg-white">
                     <div className="container mx-auto">
                         <div className="our-best">
                             <div className="grid grid-cols-2">
@@ -91,7 +91,7 @@ const Home = () => {
                                             </li>
                                             <li className="flex items-center mb-3 font-medium">
                                                 <img className="mr-2" src="https://landing.engotheme.com/html/lotus/demo/images/home/ourbest/icon-5.png" alt="icon" />
-                                                Luxurious High Thread Coun
+                                                Luxurious High Thread Count
                                             </li>
                                             <li className="flex items-center mb-3 font-medium">
                                                 <img className="mr-2" src="https://landing.engotheme.com/html/lotus/demo/images/home/ourbest/icon-1.png" alt="icon" />
@@ -120,7 +120,7 @@ const Home = () => {
                         </div>
                     </div>
                 </section>
-                <section className="section-event-news">
+                <section className="section-event-news bg-white">
                     <div className="container mx-auto">
                         <div className="grid grid-cols-2">
                             <div className="col-span-1">
@@ -239,7 +239,7 @@ const Home = () => {
                         </div>
                     </div>
                 </section>
-                <section className="section-gallery">
+                <section className="section-gallery bg-white">
                     <div className="gallery">
                         <h2>GALLERY</h2>
                         <div className="gallery-cat">
