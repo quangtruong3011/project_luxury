@@ -32,7 +32,7 @@ const RoomDetailCompare = () => {
                                         <i className="fa-solid fa-bed mr-1.5"></i> Bed: King-size or twin beds
                                     </li>
                                     <li className="flex items-center"> 
-                                        <i className="fa-solid fa-eye mr-2"></i> View: Ocen
+                                        <i className="fa-solid fa-eye mr-2"></i> View: Ocean
                                     </li>
                                 </ul>
 
@@ -69,7 +69,7 @@ const RoomDetailCompare = () => {
                                         <i className="fa-solid fa-bed mr-1.5"></i> Bed: King-size or twin beds
                                     </li>
                                     <li className="flex items-center">
-                                        <i className="fa-solid fa-eye mr-2"></i> View: Ocen
+                                        <i className="fa-solid fa-eye mr-2"></i> View: Ocean
                                     </li>
                                 </ul>
 
@@ -106,7 +106,7 @@ const RoomDetailCompare = () => {
                                         <i className="fa-solid fa-bed mr-1.5"></i> Bed: King-size or twin beds
                                     </li>
                                     <li className="flex items-center">
-                                        <i className="fa-solid fa-eye mr-2"></i> View: Ocen
+                                        <i className="fa-solid fa-eye mr-2"></i> View: Ocean
                                     </li>
                                 </ul>
 
@@ -143,7 +143,7 @@ const RoomDetailCompare = () => {
                                         <i className="fa-solid fa-bed mr-1.5"></i> Bed: King-size or twin beds
                                     </li>
                                     <li className="flex items-center">
-                                        <i className="fa-solid fa-eye mr-2"></i>View: Ocen
+                                        <i className="fa-solid fa-eye mr-2"></i>View: Ocean
                                     </li>
                                 </ul>
 
