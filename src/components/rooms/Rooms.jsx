@@ -25,7 +25,7 @@ const Rooms = () => {
                         <a className="text-slate-800 font-bold text-2xl" href="#">FAMILY ROOM</a>
                         <div>
                             <a href="#">
-                                <img className="mt-4 opacity-100 hover:opacity-80" src={logo1} alt="My Image" />
+                                <img className="mt-4 opacity-100 hover:opacity-80 w-12/12" src={logo1} alt="My Image" />
                             </a>
                         </div>
                         <div>
@@ -48,7 +48,7 @@ const Rooms = () => {
                         <a className="text-slate-800 font-bold text-2xl" href="#">LUXURY ROOM</a>
                         <div>
                             <a href="#">
-                                <img className="mt-4 opacity-100 hover:opacity-80" src={logo2} alt="My Image" />
+                                <img className="mt-4 opacity-100 hover:opacity-80 w-12/12" src={logo2} alt="My Image" />
                             </a>
                         </div>
                         <div>
@@ -71,7 +71,7 @@ const Rooms = () => {
                         <a className="text-slate-800 font-bold text-2xl" href="#">COUPLE ROOM</a>
                         <div>
                             <a href="#">
-                                <img className="mt-4 opacity-100 hover:opacity-80" src={logo3} alt="My Image" />
+                                <img className="mt-4 opacity-100 hover:opacity-80 w-12/12" src={logo3} alt="My Image" />
                             </a>
                         </div>
                         <div>
@@ -94,7 +94,7 @@ const Rooms = () => {
                         <a className="text-slate-800 font-bold text-2xl" href="#">STANDARD ROOM</a>
                         <div>
                             <a href="#">
-                                <img className="mt-4 opacity-100 hover:opacity-80" src={logo4} alt="My Image" />
+                                <img className="mt-4 opacity-100 hover:opacity-80 w-12/12" src={logo4} alt="My Image" />
                             </a>
                         </div>
                         <div>
