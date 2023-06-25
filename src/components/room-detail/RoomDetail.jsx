@@ -3,6 +3,7 @@ import "./RoomDetail.css";
 import ImageSlider from './ImageSlider';
 import RoomDetailForm from './RoomDetailForm';
 import RoomDetailTab from './RoomDetailTab';
+import RoomDetailCompare from './RoomDetailCompare';
 function RoomDetail() {
     const images = [
         'https://landing.engotheme.com/html/lotus/demo/images/room/detail/lager/img-1.jpg',
@@ -54,6 +55,9 @@ function RoomDetail() {
             </section>
             <section>
                 <RoomDetailTab />
+            </section>
+            <section>
+                 <RoomDetailCompare/>
             </section>
         </div>
     )
