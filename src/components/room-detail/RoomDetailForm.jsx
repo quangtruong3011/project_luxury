@@ -3,7 +3,7 @@ import "./RoomDetailForm.css";
 function RoomDetailForm() {
   const [arriveDate, setArriveDate] = useState('');
   const [departureDate, setDepartureDate] = useState('');
-  const [adults, setAdults] = useState(1);
+  const [adults, setAdults] = useState(0);
   const [children, setChildren] = useState(0);
 
   const handleArriveDateChange = (e) => {
