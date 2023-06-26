@@ -60,7 +60,7 @@ const Header = () => {
                                 <Link to="/" className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm">BLOG</Link>
                             </li>
                             <li>
-                                <Link to="/" className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm">CONTACT</Link>
+                                <Link to="/contact" className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm">CONTACT</Link>
                             </li>
                         </ul>
                     </nav>
