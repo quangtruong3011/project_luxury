@@ -33,9 +33,9 @@ function Login() {
   };
 
   return (
-    <section className="relative pb-32 pt-28">
-      <div className="bgOverlay absolute top-0 z-0 h-full w-full bg-[rgba(72,72,72,0.3)]"></div>
-      <div className="formContainer">
+    <div className="relative pb-32 pt-28">
+      <section className="bgOverlay absolute top-0 z-0 h-full w-full bg-[rgba(72,72,72,0.3)]"></section>
+      <section className="formContainer">
         <form
           className="relative z-10 mx-auto flex w-96 flex-col items-center gap-4 text-white font-[Montserrat]"
           action="login"
@@ -69,8 +69,8 @@ function Login() {
             <a href="#" className="hover:text-[#e1bd85]">I don't have an account</a> - <a href="#" className="hover:text-[#e1bd85]">Forgot password</a>
           </span>
         </form>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }
 

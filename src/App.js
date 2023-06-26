@@ -6,6 +6,7 @@ import Login from "./components/login/Login";
 import Register from "./components/register/Register";
 import Rooms from "./components/rooms/Rooms";
 import RoomDetail from "./components/room-detail/RoomDetail";
+import PaymentDetailForm from "./components/payment/PaymentDetailForm";
 import Contact from "./components/contact/Contact";
 import "./App.css";
 
@@ -19,6 +20,7 @@ function App({ isMobileDevice }) {
           <Route path="/register" element={<Register />} />
           <Route path="/rooms" element={<Rooms />} />
           <Route path="/room-detail" element={<RoomDetail />} />
+          <Route path="/checkout" element={<PaymentDetailForm />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </Layout>
