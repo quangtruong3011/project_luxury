@@ -5,12 +5,63 @@ import "./BillDetailTitles";
 import BillDetailTitles from "./BillDetailTitles";
 
 function PaymentDetailForm() {
-  const countries = ["Viet Nam", "USA", "Canada", "UK", "China", "Thailand"];
-
+  //handle country selection
+  const countries = ["Viet Nam", "USA", "Canada", "UK", "Japan", "China"];
   const [selectedCountry, setSelectedCountry] = useState("");
-
   const handleCountryChange = (event) => {
     setSelectedCountry(event.target.value);
+    setFormData({
+      ...formData,
+      country: event.target.value,
+    });
+  };
+
+  //handle all input change
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    companyName: "",
+    street: "",
+    apartment: "",
+    townCity: "",
+    country: "",
+    email: "",
+    phone: "",
+    orderNotes: "",
+  });
+  const handleChange = (event) => {
+    setFormData({
+      ...formData,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  //handle submit
+  const handleSubmit = (event) => {
+    //prevent reload
+    event.preventDefault();
+    //save form data to JSON file
+    saveFormDataToJson(formData);
+    //clear form inputs after submit
+    setFormData({
+      firstName: "",
+      lastName: "",
+      companyName: "",
+      street: "",
+      apartment: "",
+      townCity: "",
+      country: "",
+      email: "",
+      phone: "",
+      orderNotes: "",
+    });
+  };
+
+  //save form data to JSON
+  const saveFormDataToJson = () => {
+    const buyers = JSON.parse(localStorage.getItem("buyers")) || [];
+    buyers.push(formData);
+    localStorage.setItem("buyers", JSON.stringify(buyers));
   };
 
   return (
@@ -47,7 +98,7 @@ function PaymentDetailForm() {
           </div>
           <div className="selectRooms w-2/3 bg-[#F1F1F1] py-4">
             <h3 className="text-center font-[montserrat] text-lg font-semibold">
-              SELECT ROOMS
+              SELECTED ROOMS
             </h3>
             <hr className="my-4 border-b-0 border-slate-300" />
             <ul className="flex flex-col gap-3 px-5">
@@ -98,7 +149,10 @@ function PaymentDetailForm() {
           </div>
         </section>
 
-        <section className="billingDetails col-span-2 h-full w-2/3">
+        <section
+          className="billingDetails col-span-2 h-full w-2/3"
+          onSubmit={handleSubmit}
+        >
           <span className="text-sm text-gray-400">
             Returning customer?{" "}
             {
@@ -111,9 +165,9 @@ function PaymentDetailForm() {
             BILLING DETAILS
           </h1>
           <div>
-            <BillDetailTitles title="COUNTRY*">
+            <BillDetailTitles title="COUNTRY" mustFill={true}>
               <select
-                className="w-full"
+                className="w-full focus:outline-none"
                 value={selectedCountry}
                 onChange={handleCountryChange}
               >
@@ -125,40 +179,122 @@ function PaymentDetailForm() {
                 ))}
               </select>
             </BillDetailTitles>
-            <div className="flex justify-between">
-              <BillDetailTitles title="FIRST NAME">
-                <input type="text" />
+            <div className="grid grid-cols-2 gap-7">
+              <BillDetailTitles title="FIRST NAME" mustFill={true}>
+                <input
+                  type="text"
+                  className="w-full"
+                  name="firstName"
+                  value={formData.firstName}
+                  onChange={handleChange}
+                />
               </BillDetailTitles>
-              <BillDetailTitles title="LAST NAME">
-                <input type="text" />
+              <BillDetailTitles title="LAST NAME" mustFill={true}>
+                <input
+                  type="text"
+                  className="w-full"
+                  name="lastName"
+                  value={formData.lastName}
+                  onChange={handleChange}
+                />
               </BillDetailTitles>
             </div>
             <BillDetailTitles title="COMPANY NAME">
-              <input type="text" />
+              <input
+                type="text"
+                className="w-full"
+                name="companyName"
+                value={formData.companyName}
+                onChange={handleChange}
+              />
             </BillDetailTitles>
-            <BillDetailTitles title="ADDRESS">
-              <input type="text" />
+            <BillDetailTitles title="ADDRESS" mustFill={true}>
+              <input
+                type="text"
+                placeholder="Street Address"
+                className="w-full"
+                name="street"
+                value={formData.street}
+                onChange={handleChange}
+              />
             </BillDetailTitles>
-            <div className="flex justify-between">
-              <BillDetailTitles title="TOWN / CITY">
-                <input type="text" />
+            <BillDetailTitles>
+              <input
+                type="text"
+                placeholder="Apartment, suite, unit etc. (Optional)"
+                className="w-full"
+                name="apartment"
+                value={formData.apartment}
+                onChange={handleChange}
+              />
+            </BillDetailTitles>
+            <div className="grid grid-cols-2 gap-7">
+              <BillDetailTitles title="TOWN / CITY" mustFill={true}>
+                <input
+                  type="text"
+                  className="w-full"
+                  name="townCity"
+                  value={formData.townCity}
+                  onChange={handleChange}
+                />
               </BillDetailTitles>
-              <BillDetailTitles title="COUNTRY">
-                <input type="text" />
+              <BillDetailTitles title="COUNTRY" mustFill={true}>
+                <input
+                  type="text"
+                  className="w-full"
+                  name="country"
+                  value={formData.country}
+                  onChange={handleChange}
+                />
               </BillDetailTitles>
             </div>
-            <div className="flex justify-between">
-              <BillDetailTitles title="EMAIL ADDRESS">
-                <input type="text" />
+            <div className="grid grid-cols-2 gap-7">
+              <BillDetailTitles title="EMAIL ADDRESS" mustFill={true}>
+                <input
+                  type="email"
+                  className="w-full"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                />
               </BillDetailTitles>
-              <BillDetailTitles title="PHONE">
-                <input type="text" />
+              <BillDetailTitles title="PHONE" mustFill={true}>
+                <input
+                  type="text"
+                  className="w-full"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                />
               </BillDetailTitles>
             </div>
             <BillDetailTitles title="ORDER NOTES">
-              <input className="h-36" type="text" />
+              <div className="grid grid-cols-1 grid-rows-6">
+                <input
+                  placeholder="Notes about your order, e.g. special notes for delivery"
+                  className="w-full"
+                  type="text"
+                  name="orderNotes"
+                  value={formData.orderNotes}
+                  onChange={handleChange}
+                />
+              </div>
             </BillDetailTitles>
           </div>
+          <button
+            className="placeOrderBtn my-4 w-44 border-2 border-[#e1bd85] bg-[#e1bd85] py-2.5 font-[montserrat] text-sm font-semibold text-white hover:bg-white hover:text-[#e1bd85]"
+            onClick={handleSubmit}
+            disabled={
+              !formData.firstName ||
+              !formData.lastName ||
+              !formData.street ||
+              !formData.country ||
+              !formData.email ||
+              !formData.phone
+            }
+          >
+            PLACE ORDER
+          </button>
         </section>
       </div>
     </div>
