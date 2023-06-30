@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router"
+
 import "./Login.css";
 
 function Login() {
@@ -14,6 +17,8 @@ function Login() {
     });
   };
 
+  const navigate = useNavigate();
+  
   const handleSubmit = (event) => {
     //prevent reload
     event.preventDefault();
@@ -24,6 +29,8 @@ function Login() {
       name: "",
       password: "",
     });
+    //redirects to homepage
+    navigate('/');
   };
 
   const saveFormDataToJson = () => {
@@ -62,11 +69,12 @@ function Login() {
           <button
             className="loginBtn font-semibold my-4 w-44 bg-[#e1bd85] py-2.5 text-base text-white border-2 border-[#e1bd85] hover:bg-white hover:text-[#e1bd85]"
             onClick={handleSubmit}
+            disabled={!formData.name || !formData.password}
           >
             LOGIN
           </button>
           <span className="accountDesc text-xs">
-            <a href="#" className="hover:text-[#e1bd85]">I don't have an account</a> - <a href="#" className="hover:text-[#e1bd85]">Forgot password</a>
+            <Link to="/register" className="hover:text-[#e1bd85]">I don't have an account</Link> - <Link to="#" className="hover:text-[#e1bd85]">Forgot password</Link>
           </span>
         </form>
       </section>
