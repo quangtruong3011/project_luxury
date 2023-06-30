@@ -32,8 +32,8 @@ const Header = () => {
                     </div>
                     <div className="header-right flex">
                         <span className="login-register">
-                            <Link to="/login" className="text-sm text-white px-2">LOGIN</Link>
-                            <Link to="/register" className="text-sm text-white px-2">REGISTER</Link>
+                            <Link to="/login" className="text-sm text-black px-2">LOGIN</Link>
+                            <Link to="/register" className="text-sm text-black px-2">REGISTER</Link>
                         </span>
                         <CurrencyDropdown />
                         <LanguageDropdown />
