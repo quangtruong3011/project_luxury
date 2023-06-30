@@ -1,7 +1,4 @@
 import "./Header.css";
-import CurrencyDropdown from "./CurrencyDropdown";
-import LanguageDropdown from "./LanguageDropdown";
-
 const Header = () => {
     return (
         <header>
@@ -27,14 +24,6 @@ const Header = () => {
                             </svg>
                             1-548-854-8898
                         </span>
-                    </div>
-                    <div className="header-right flex">
-                        <span className="login-register">
-                            <a className="text-sm text-white px-2" href="#">LOGIN</a>
-                            <a className="text-sm text-white px-2" href="#">REGISTER</a>
-                        </span>
-                        <CurrencyDropdown />
-                        <LanguageDropdown />
                     </div>
                 </div>
             </div>
