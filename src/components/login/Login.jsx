@@ -33,7 +33,7 @@ function Login() {
   };
 
   return (
-    <div className="relative pb-32 pt-28">
+    <div className="loginContainer relative pb-32 pt-28">
       <section className="bgOverlay absolute top-0 z-0 h-full w-full bg-[rgba(72,72,72,0.3)]"></section>
       <section className="formContainer">
         <form
