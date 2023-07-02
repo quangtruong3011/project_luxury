@@ -1,7 +1,3 @@
-.widget_deal {
-    text-align: center;
-}
-
 .widget-title {
     font-size: 24px;
     font-weight: bold;
@@ -13,7 +9,6 @@
     width: 300px;
     height: 300px;
     overflow: hidden;
-    margin-left: 16%;
 }
 
 .deal-item {
@@ -35,6 +30,7 @@
 }
 
 .deal-img {
+    text-align: center;
     width: 100%;
     height: 100%;
     position: absolute;
@@ -42,6 +38,7 @@
     left: 0;
     z-index: 1;
 }
+
 .deal-img img {
     height: 300px !important;
 }
