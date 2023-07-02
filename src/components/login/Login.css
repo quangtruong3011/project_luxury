@@ -7,12 +7,11 @@
   padding: 0;
 }
 
-body {
+.loginContainer{
   background-image: url("../img/login-register/login-register-bg.jpg");
   background-size: cover;
   background-position: center;
 }
-
 textarea:focus, input:focus {
     outline: none;
     border-color: #e1bd85;
