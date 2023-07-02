@@ -70,8 +70,8 @@ function PaymentDetailForm() {
   };
 
   //get string item from localStorage then parse it back to object
-  const billingDetailsString = localStorage.getItem("billingDetails")
-  const billingDetails = JSON.parse(billingDetailsString)
+  // const billingDetailsString = localStorage.getItem("billingDetails")
+  // const billingDetails = JSON.parse(billingDetailsString)
 
   //test logging
   // useEffect(() => {
@@ -103,11 +103,11 @@ function PaymentDetailForm() {
               <ul className="flex flex-col gap-3 px-5">
                 <li className="flex justify-between text-xs">
                   <span>Check-In</span>
-                  <span className="font-semibold">{`${billingDetails[0]["orderNotes"]}`}</span>
+                  <span className="font-semibold">no</span>
                 </li>
                 <li className="flex justify-between text-xs">
                   <span>Check-Out</span>
-                  <span className="font-semibold">{`${billingDetails[1]["orderNotes"]}`}</span>
+                  <span className="font-semibold">no</span>
                 </li>
                 <li className="flex justify-between text-xs">
                   <span>Total Nights</span>
