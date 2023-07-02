@@ -119,7 +119,7 @@ const Footer = () => {
             </div>
             <div className="footer-bottom">
                 <div className="container mx-auto">
-                    <p>© 2016 Lotus Hotel All rights reserved.</p>
+                    <p>© 2023 Lotus Hotel All rights reserved.</p>
                 </div>
             </div>
         </footer>
