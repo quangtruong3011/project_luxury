@@ -1,18 +1,5 @@
 import "./Header.css";
-import { Routes, Route, Link } from 'react-router-dom';
-import { useNavigate } from "react-router";
-import CurrencyDropdown from "./CurrencyDropdown";
-import LanguageDropdown from "./LanguageDropdown";
-import headerLogo from "../../common/Layout/img/header-logo.png"
-
 const Header = () => {
-    const navigateBackHome = useNavigate()
-    const users = localStorage.getItem("users");
-    const handleLogout = () => {
-        localStorage.removeItem("users")
-        navigateBackHome("/")
-    }
-
     return (
         <header>
             <div className="header-top bg-transparent">
@@ -38,45 +25,29 @@ const Header = () => {
                             1-548-854-8898
                         </span>
                     </div>
-                    <div className="header-right flex">
-                        <span className="login-register">
-                            <div className="inline-block">
-                                {users ? (
-                                    <button onClick={handleLogout} className="text-sm text-black px-2">
-                                        LOGOUT
-                                    </button>
-                                ) : (
-                                    <Link to="/login" className="text-sm text-black px-2">LOGIN</Link> 
-                                )}
-                            </div>
-                            <Link to="/register" className="text-sm text-black px-2">REGISTER</Link>
-                        </span>
-                        <CurrencyDropdown />
-                        <LanguageDropdown />
-                    </div>
                 </div>
             </div>
             <div className="Header-content bg-white py-3">
                 <div className="container mx-auto flex items-center">
-                    <div className="header-logo w-[155px] mr-10 py-2">
-                        <img src={headerLogo} alt="" />
+                    <div className="header-logo mr-10 py-2">
+                        <img src="https://landing.engotheme.com/html/lotus/demo/images/logo-header.png" alt="" />
                     </div>
                     <nav className="header-menu">
                         <ul className="flex">
-                            <li>
-                                <Link to="/" className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm">HOME</Link>
+                            <li className="">
+                                <a className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm" href="#">HOME</a>
                             </li>
                             <li>
-                                <Link to="/" className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm">ABOUT</Link>
+                                <a className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm" href="#">ABOUT</a>
                             </li>
                             <li>
-                                <Link to="/rooms" className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm">ROOM</Link>
+                                <a className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm" href="#">ROOM</a>
                             </li>
                             <li>
-                                <Link to="/" className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm">BLOG</Link>
+                                <a className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm" href="">BLOG</a>
                             </li>
                             <li>
-                                <Link to="/contact" className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm">CONTACT</Link>
+                                <a className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm" href="#">CONTACT</a>
                             </li>
                         </ul>
                     </nav>

@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 
-// import Header from "../../common/Layout/Header";
-// import Footer from "../../common/Layout/Footer";
-import RoomList from '../../components/roomList/RoomList';
-import SlideShow from './SlideShow';
+import Header from "../../component/header/Header";
+import Footer from "../../component/footer/Footer";
+import Slideshow from '../../component/slideShow/SlideShow';
+import DateRange from '../../component/checkAvailability/CheckAvailability';
+import RoomList from '../../component/roomList/RoomList';
+import Gallery from '../../component/gallery/Gallery';
 import "./Home.css";
 
 
@@ -13,21 +15,10 @@ const Home = () => {
             {/* <Header /> */}
             <main>
                 <section className="section-slider">
-                    <SlideShow />
+                    <Slideshow />
                 </section>
                 <section className="section-check-availability">
-                    <div className="container">
-                        <div className="check-availability">
-                            <div className="grid grid-cols-4">
-                                <div className="col-span-1">
-                                    <h2>CHECK AVAILABILITY</h2>
-                                </div>
-                                <div className="col-span-3">
-                                    <form></form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <DateRange />
                 </section>
                 <section className="section-accomd">
                     <div className="container mx-auto">
@@ -38,9 +29,7 @@ const Home = () => {
                                     <img className="mx-auto" src="https://landing.engotheme.com/html/lotus/demo/images/icon-accmod.png" alt="" />
                                     <p className="text-base text-center mt-2 mb-4">Semper ac dolor vitae accumsan. Cras interdum hendrerit lacinia. Phasellus accumsan urna vitae molestie interdum. Nam sed placerat libero, non eleifend dolor.</p>
                                 </div>
-                                <div className="">
-                                    <RoomList />
-                                </div>
+                                <RoomList />
                             </div>
                         </div>
                     </div>
@@ -52,7 +41,7 @@ const Home = () => {
                                 <div className="col-span-1">
                                     <div className="img">
                                         <a href="#">
-                                            <img src="https://landing.engotheme.com/html/lotus/demo/images/home/about/img-1.jpg" alt="" />
+                                            <img className="w-full p-5" src="https://landing.engotheme.com/html/lotus/demo/images/home/about/img-1.jpg" alt="" />
                                         </a>
                                     </div>
                                 </div>
@@ -61,7 +50,7 @@ const Home = () => {
                                         <h2 className="mt-4 text-[#232323] text-4xl font-bold">ABOUT US</h2>
                                         <span className="inline-block h-[1px] bg-[#e1bd85] w-[250px]"></span>
                                         <p className="text-[#232323] mt-6 mb-0 text-sm">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source</p>
-                                        <a className="inline-block border-2 border-black hover:border-[#e1bd85] hover:bg-[#e1bd85] py-2 px-3 mt-5 text-xs text-center w-[110px]" href="#">READ MORE</a>
+                                        <a className="inline-block border-2 border-black hover:border-[#e1bd85] hover:bg-[#e1bd85] hover:text-white py-2 px-3 mt-5 text-xs text-center w-[110px]" href="#">READ MORE</a>
                                     </div>
                                 </div>
                             </div>
@@ -106,7 +95,7 @@ const Home = () => {
                                 </div>
                                 <div className="col-span-1">
                                     <div className="img">
-                                        <img src="https://landing.engotheme.com/html/lotus/demo/images/home/ourbest/img-1.jpg" alt="" />
+                                        <img className="w-full p-5" src="https://landing.engotheme.com/html/lotus/demo/images/home/ourbest/img-1.jpg" alt="" />
                                     </div>
                                 </div>
                             </div>
@@ -122,25 +111,25 @@ const Home = () => {
                 </section>
                 <section className="section-event-news bg-white">
                     <div className="container mx-auto">
-                        <div className="grid grid-cols-2">
+                        <div className="grid grid-cols-2 gap-5">
                             <div className="col-span-1">
                                 <div className="event">
                                     <h2 className="text-[#232323] text-4xl font-bold">EVENT & DEAL</h2>
                                     <span className="w-[350px] h-[1px] bg-[#e1bd85] mt-3 mb-5 block"></span>
                                     <div>
-                                        <div className="grid grid-cols-1">
+                                        <div className="grid grid-cols-1 pb-5">
                                             <div className="event-item">
                                                 <div className="img overflow-hidden">
-                                                    <img className="transition duration-300 ease-in-out hover:scale-110" src="https://landing.engotheme.com/html/lotus/demo/images/home/eventdeal/img-1.jpg" alt="" />
+                                                    <img className="w-full transition duration-300 ease-in-out hover:scale-110" src="https://landing.engotheme.com/html/lotus/demo/images/home/eventdeal/img-1.jpg" alt="" />
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="grid grid-cols-2">
+                                        <div className="grid grid-cols-2 gap-5">
                                             <div className="col-span-1">
                                                 <div className="event-item relative">
                                                     <div className="img overflow-hidden">
                                                         <a href="#">
-                                                            <img className="transition duration-300 ease-in-out hover:scale-110" src="https://landing.engotheme.com/html/lotus/demo/images/home/eventdeal/img-2.jpg" alt="" />
+                                                            <img className="w-full transition duration-300 ease-in-out hover:scale-110" src="https://landing.engotheme.com/html/lotus/demo/images/home/eventdeal/img-2.jpg" alt="" />
                                                         </a>
                                                     </div>
                                                     <div className="text absolute w-[130px] bg-black/60 top-0 left-5 bottom-0">
@@ -156,7 +145,7 @@ const Home = () => {
                                                 <div className="event-item relative">
                                                     <div className="img overflow-hidden">
                                                         <a href="#">
-                                                            <img className="transition duration-300 ease-in-out hover:scale-110" src="https://landing.engotheme.com/html/lotus/demo/images/home/eventdeal/img-3.jpg" alt="" />
+                                                            <img className="w-full transition duration-300 ease-in-out hover:scale-110" src="https://landing.engotheme.com/html/lotus/demo/images/home/eventdeal/img-3.jpg" alt="" />
                                                         </a>
                                                     </div>
                                                     <div className="text absolute w-[130px] bg-black/60 top-0 left-5 bottom-0">
@@ -239,39 +228,7 @@ const Home = () => {
                         </div>
                     </div>
                 </section>
-                <section className="section-gallery bg-white">
-                    <div className="gallery">
-                        <h2>GALLERY</h2>
-                        <div className="gallery-cat">
-                            <ul className="list-inline">
-                                <li className="active">
-                                    <a href="#">ALL</a>
-                                </li>
-                                <li>
-                                    <a href="#">HOTEL & GROUND</a>
-                                </li>
-                                <li>
-                                    <a href="#">ROOM/SUITE</a>
-                                </li>
-                                <li>
-                                    <a href="">DINING</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="gallery-content">
-                            <div className="grid grid-cols-6">
-                                <div className="col-span-1">
-                                    <a href="">
-                                        <img src="" alt="" />
-                                    </a>
-                                </div>
-                            </div>
-                            <div className="">
-                                <a href="#">BROWSE OUR GALLERY</a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                <Gallery />
             </main>
             {/* <Footer /> */}
         </div>

@@ -7,7 +7,7 @@ const RoomList = () => {
     <div className="col-span-1 relative" key={room.id}>
       <div className="img overflow-hidden">
         <a href="#">
-          <img className="transition duration-300 ease-in-out hover:scale-110" src={room.imgUrl} alt={room.name} />
+          <img className="w-full transition duration-300 ease-in-out hover:scale-110" src={room.imgUrl} alt={room.name} />
         </a>
       </div>
       <div className="text absolute w-full h-min bg-black/60 py-2 px-5 bottom-5">
