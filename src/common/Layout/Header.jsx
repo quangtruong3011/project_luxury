@@ -1,20 +1,35 @@
-import "./Header.css";
-<<<<<<<<< Temporary merge branch 1:src/component/header/Header.jsx
-=========
-import { Routes, Route, Link } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router";
-import CurrencyDropdown from "./CurrencyDropdown";
-import LanguageDropdown from "./LanguageDropdown";
-import headerLogo from "../../common/Layout/img/header-logo.png"
+import headerLogo from "../../common/Layout/img/header-logo.png";
+import "./Header.css";
 
->>>>>>>>> Temporary merge branch 2:src/common/Layout/Header.jsx
 const Header = () => {
-    const navigateBackHome = useNavigate()
+    const navigateBackHome = useNavigate();
     const users = localStorage.getItem("users");
+
+    const [isHeaderTopVisible, setIsHeaderTopVisible] = useState(true);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 75) {
+                setIsHeaderTopVisible(false);
+            } else {
+                setIsHeaderTopVisible(true);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
     const handleLogout = () => {
-        localStorage.removeItem("users")
-        navigateBackHome("/")
-    }
+        localStorage.removeItem("users");
+        navigateBackHome("/");
+    };
 
     return (
         <header>
@@ -55,8 +70,6 @@ const Header = () => {
                             1-548-854-8898
                         </span>
                     </div>
-<<<<<<<<< Temporary merge branch 1:src/component/header/Header.jsx
-=========
                     <div className="header-right flex">
                         <span className="login-register">
                             <div className="inline-block">
@@ -65,38 +78,35 @@ const Header = () => {
                                         LOGOUT
                                     </button>
                                 ) : (
-                                    <Link to="/login" className="text-sm text-black px-2">LOGIN</Link> 
+                                    <Link to="/login" className="text-sm text-white hover:bg-[#e1bd85] px-2 py-1">LOGIN</Link>
                                 )}
                             </div>
-                            <Link to="/register" className="text-sm text-black px-2">REGISTER</Link>
+                            <Link to="/register" className="text-sm text-white hover:bg-[#e1bd85] px-2 py-1">REGISTER</Link>
                         </span>
-                        <CurrencyDropdown />
-                        <LanguageDropdown />
                     </div>
->>>>>>>>> Temporary merge branch 2:src/common/Layout/Header.jsx
                 </div>
             </div>
             <div className="header-content bg-white py-3">
                 <div className="container mx-auto flex items-center">
-                    <div className="header-logo mr-10 py-2">
-                        <img src="https://landing.engotheme.com/html/lotus/demo/images/logo-header.png" alt="" />
+                    <div className="header-logo w-[155px] mr-10 py-2">
+                        <img src={headerLogo} alt="" />
                     </div>
                     <nav className="header-menu">
                         <ul className="flex">
-                            <li className="">
-                                <a className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm" href="#">HOME</a>
+                            <li>
+                                <Link to="/" className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm">HOME</Link>
                             </li>
                             <li>
                                 <Link to="/" className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm">ABOUT</Link>
                             </li>
                             <li>
-                                <a className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm" href="#">ROOM</a>
+                                <Link to="/rooms" className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm">ROOM</Link>
                             </li>
                             <li>
-                                <a className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm" href="">BLOG</a>
+                                <Link to="/" className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm">BLOG</Link>
                             </li>
                             <li>
-                                <a className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm" href="#">CONTACT</a>
+                                <Link to="/contact" className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm">CONTACT</Link>
                             </li>
                         </ul>
                     </nav>
