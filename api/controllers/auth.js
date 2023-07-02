@@ -1,7 +1,7 @@
 import User from "../models/User.js";
 import bcrypt from "bcryptjs";
 import { createError } from "../utils/error.js";
-import jwt from "jsonwebtoken";
+import jwt from "jsonwebtoken"
 
 export const register = async (req, res, next) => {
   try {
@@ -9,7 +9,8 @@ export const register = async (req, res, next) => {
     const hash = bcrypt.hashSync(req.body.password, salt);
 
     const newUser = new User({
-      ...req.body,
+      username: req.body.username,
+      email: req.body.email,
       password: hash,
     });
 
@@ -19,6 +20,7 @@ export const register = async (req, res, next) => {
     next(err);
   }
 };
+
 export const login = async (req, res, next) => {
   try {
     const user = await User.findOne({ username: req.body.username });
@@ -38,11 +40,9 @@ export const login = async (req, res, next) => {
 
     const { password, isAdmin, ...otherDetails } = user._doc;
     res
-      .cookie("access_token", token, {
-        httpOnly: true,
-      })
+      .cookie("access_token", token, { httpOnly: true })
       .status(200)
-      .json({ details: { ...otherDetails }, isAdmin });
+      .json({ ...otherDetails });
   } catch (err) {
     next(err);
   }
