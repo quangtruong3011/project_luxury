@@ -1,5 +1,5 @@
 import React from "react";
-import roomData from "../../components/home/roomData.json";
+import roomData from "./roomData.json";
 
 const RoomList = () => {
   // Lặp qua dữ liệu phòng và tạo mã HTML cho mỗi phòng

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import classnames from "classnames";
-import './Gallery.css';
 
 const galleryImg = [
     {
@@ -94,7 +93,7 @@ const Gallery = () => {
     };
 
     return (
-        <section>
+        <section className="section-gallery">
             <div className="my-10">
                 <div className="container">
                     <h2 className="text-center mb-10 text-4xl font-bold">Gallery</h2>
