@@ -1,11 +1,9 @@
 import React from 'react';
-
 import Slideshow from '../slideShow/SlideShow';
 import DateRange from '../dateRange/DateRange';
 import RoomList from '../roomList/RoomList';
 import Gallery from '../gallery/Gallery';
 import "./Home.css";
-
 
 const Home = () => {
     return (
