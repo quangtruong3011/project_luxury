@@ -60,7 +60,7 @@ function Login() {
             onChange={handleChange}
           />
           <button
-            className="loginBtn my-4 w-44 bg-[#e1bd85] py-2.5 text-base text-white border-2 border-[#e1bd85] hover:bg-white hover:text-[#e1bd85]"
+            className="loginBtn font-semibold my-4 w-44 bg-[#e1bd85] py-2.5 text-base text-white border-2 border-[#e1bd85] hover:bg-white hover:text-[#e1bd85]"
             onClick={handleSubmit}
           >
             LOGIN
