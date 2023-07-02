@@ -16,11 +16,11 @@ function RoomDetail() {
     ];
     return (
         <div className='detail-content'>
-            <section className="pt-20 bg-16 ">
+            <section className="pt-14 bg-16 ">
                 <div className='awe-overlay'></div>
-                <div className='sub-banner'>
+                <div className='sub-banners'>
                     <div className='container'>
-                        <div className='text text-center'>
+                        <div className='texts text-center'>
                             <h2>LUXURY ROOM</h2>
                             <p>Lorem Ipsum is simply dummy text</p>
                         </div>

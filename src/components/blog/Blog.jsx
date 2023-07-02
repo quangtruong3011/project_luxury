@@ -4,21 +4,21 @@ import WidgetDeal from "./WidgetDeal.jsx";
 function Blog() {
     return (
         <div>
-            <div class="sub-banner">
-                <div class="container">
-                    <div class="text text-center">
-                        <h2 class="text-4xl font-bold">Our BLOG</h2>
-                        <p class="text-lg">Lorem Ipsum is simply dummy text</p>
+            <div className="sub-banner">
+                <div className="container">
+                    <div className="text text-center">
+                        <h2 className="text-4xl font-bold">Our BLOG</h2>
+                        <p className="text-lg">Lorem Ipsum is simply dummy text</p>
                     </div>
                 </div>
             </div>
-            <div class="blog-content">
-                <div class="container">
-                    <div class="blog">
-                        <div class="grid grid-cols-3 gap-5">
-                            <div class="col-span-1">
-                                <div class="sidebar">
-                                    <div class="widget widget_deal">
+            <div className="blog-content">
+                <div className="container">
+                    <div className="blog">
+                        <div className="grid grid-cols-3 gap-5">
+                            <div className="col-span-1">
+                                <div className="sidebar">
+                                    <div className="widget widget_deal">
                                         <WidgetDeal />
                                         <div className='widget widget_categories'>
                                             <h4 className='widget-title'>CATEGORIES</h4>

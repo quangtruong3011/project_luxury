@@ -1,4 +1,5 @@
 import "./WidgetDeal.css"
+import { Routes, Route, Link } from 'react-router-dom';
 import React, { useState } from 'react';
 
 const WidgetDeal = () => {
@@ -6,21 +7,21 @@ const WidgetDeal = () => {
         {
             id: 1,
             name: 'Luxury ROOM FORM',
-            price: '$320',
+            price: '$260',
             aweBtn: 'VIEW MORE',
             image: 'https://landing.engotheme.com/html/lotus/demo/images/hotel/img-1.jpg',
         },
         {
             id: 2,
             name: 'Luxury ROOM FORM',
-            price: '$320',
+            price: '$260',
             aweBtn: 'VIEW MORE',
             image: 'https://landing.engotheme.com/html/lotus/demo/images/room/img-1.jpg',
         },
         {
             id: 3,
             name: 'Luxury ROOM FORM',
-            price: '$320',
+            price: '$260',
             aweBtn: 'VIEW MORE',
             image: 'https://landing.engotheme.com/html/lotus/demo/images/room/img-2.jpg',
         },
@@ -55,9 +56,7 @@ const WidgetDeal = () => {
                             <div className="deal-text">
                                 <h2>{product.name}</h2>
                                 <p className="deal-price">{product.price}</p>
-                                <a href="#" className="deal-btn">
-                                    {product.aweBtn}
-                                </a>
+                                <Link to="/room-detail" className="deal-btn">{product.aweBtn}</Link>
                             </div>
                         </div>
                     </div>

@@ -24,7 +24,7 @@
     z-index: 0;
 } */
 
-.sub-banner {
+.sub-banners {
     position: relative;
 }
 
@@ -35,19 +35,19 @@
     margin-left: auto;
 }
 
-.sub-banner .text {
-    padding-bottom: 50px;
+.sub-banners .texts {
+    padding-bottom: 60px;
 }
 
-.sub-banner .text h2 {
-    margin-top: 70px;
+.sub-banners .texts h2 {
+    margin-top: 30px;
     margin-bottom: 0;
     color: #fff;
     font-size: 35.68px;
     text-transform: uppercase;
 }
 
-.sub-banner .text p {
+.sub-banners .texts p {
     margin-bottom: 0;
     color: #fff;
     font-size: 20px;
