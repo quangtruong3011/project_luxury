@@ -8,6 +8,7 @@ import Rooms from "./components/rooms/Rooms";
 import RoomDetail from "./components/room-detail/RoomDetail";
 import PaymentDetailForm from "./components/payment/PaymentDetailForm";
 import Contact from "./components/contact/Contact";
+import Blog from "./components/blog/Blog";
 import "./App.css";
 
 function App({ isMobileDevice }) {
@@ -22,6 +23,7 @@ function App({ isMobileDevice }) {
           <Route path="/room-detail" element={<RoomDetail />} />
           <Route path="/checkout" element={<PaymentDetailForm />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/blog" element={<Blog />} />
         </Routes>
       </Layout>
     </BrowserRouter>

@@ -1,0 +1,36 @@
+.sub-banner {
+    background-image: url('https://landing.engotheme.com/html/lotus/demo/images/banner/img-9.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 250px;
+    background-color: #f2f2f2;
+    padding: 30px 0;
+}
+
+.blog-content {
+    background-color: white;
+    padding: 20px 0;
+}
+/* CSS Tailwind */
+.text {
+    margin-top: 20px;
+}
+
+.widget_deal {
+    margin-top: 20px;
+}
+
+.grid {
+    display: grid;
+}
+.text-4xl {
+    font-size: 2.25rem;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.text-lg {
+    font-size: 1.125rem;
+}
