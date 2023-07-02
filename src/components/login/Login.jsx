@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router"
+
 import "./Login.css";
 
 function Login() {
@@ -14,6 +17,8 @@ function Login() {
     });
   };
 
+  const navigate = useNavigate();
+  
   const handleSubmit = (event) => {
     //prevent reload
     event.preventDefault();
@@ -24,6 +29,8 @@ function Login() {
       name: "",
       password: "",
     });
+    //redirects to homepage
+    navigate('/');
   };
 
   const saveFormDataToJson = () => {
@@ -33,9 +40,9 @@ function Login() {
   };
 
   return (
-    <section className="relative pb-32 pt-28">
-      <div className="bgOverlay absolute top-0 z-0 h-full w-full bg-[rgba(72,72,72,0.3)]"></div>
-      <div className="formContainer">
+    <div className="loginContainer relative pb-32 pt-28">
+      <section className="bgOverlay absolute top-0 z-0 h-full w-full bg-[rgba(72,72,72,0.3)]"></section>
+      <section className="formContainer">
         <form
           className="relative z-10 mx-auto flex w-96 flex-col items-center gap-4 text-white font-[Montserrat]"
           action="login"
@@ -62,15 +69,16 @@ function Login() {
           <button
             className="loginBtn font-semibold my-4 w-44 bg-[#e1bd85] py-2.5 text-base text-white border-2 border-[#e1bd85] hover:bg-white hover:text-[#e1bd85]"
             onClick={handleSubmit}
+            disabled={!formData.name || !formData.password}
           >
             LOGIN
           </button>
           <span className="accountDesc text-xs">
-            <a href="#" className="hover:text-[#e1bd85]">I don't have an account</a> - <a href="#" className="hover:text-[#e1bd85]">Forgot password</a>
+            <Link to="/register" className="hover:text-[#e1bd85]">I don't have an account</Link> - <Link to="#" className="hover:text-[#e1bd85]">Forgot password</Link>
           </span>
         </form>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }
 

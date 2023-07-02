@@ -274,8 +274,8 @@ function RoomDetailTab() {
                                 <div>
                                     <div className="calendar_custom">
                                         <div className="calendar_title">
-                                            <span className="calendar_month">JUNE</span>
-                                            <span className="calendar_year">2015</span>
+                                            <span className="calendar_month">JULY</span>
+                                            <span className="calendar_year">2023</span>
                                             <a href="#" className="calendar_prev calendar_corner"><i className="lotus-icon-left-arrow"></i></a>
                                         </div>
                                         <table className="calendar_tabel">
@@ -343,8 +343,8 @@ function RoomDetailTab() {
                                 <div classNames="col-sm-6">
                                     <div className="calendar_custom">
                                         <div className="calendar_title">
-                                            <span className="calendar_month">JUNE</span>
-                                            <span className="calendar_year">2015</span>
+                                            <span className="calendar_month">JULY</span>
+                                            <span className="calendar_year">2023</span>
 
                                             <a href="#" className="calendar_next calendar_corner"><i className="lotus-icon-right-arrow"></i></a>
                                         </div>

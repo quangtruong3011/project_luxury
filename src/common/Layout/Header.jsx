@@ -1,10 +1,18 @@
 import "./Header.css";
 import { Routes, Route, Link } from 'react-router-dom';
+import { useNavigate } from "react-router";
 import CurrencyDropdown from "./CurrencyDropdown";
 import LanguageDropdown from "./LanguageDropdown";
 import headerLogo from "../../common/Layout/img/header-logo.png"
 
 const Header = () => {
+    const navigateBackHome = useNavigate()
+    const users = localStorage.getItem("users");
+    const handleLogout = () => {
+        localStorage.removeItem("users")
+        navigateBackHome("/")
+    }
+
     return (
         <header>
             <div className="header-top bg-transparent">
@@ -32,8 +40,16 @@ const Header = () => {
                     </div>
                     <div className="header-right flex">
                         <span className="login-register">
-                            <Link to="/login" className="text-sm text-white px-2">LOGIN</Link>
-                            <Link to="/register" className="text-sm text-white px-2">REGISTER</Link>
+                            <div className="inline-block">
+                                {users ? (
+                                    <button onClick={handleLogout} className="text-sm text-black px-2">
+                                        LOGOUT
+                                    </button>
+                                ) : (
+                                    <Link to="/login" className="text-sm text-black px-2">LOGIN</Link> 
+                                )}
+                            </div>
+                            <Link to="/register" className="text-sm text-black px-2">REGISTER</Link>
                         </span>
                         <CurrencyDropdown />
                         <LanguageDropdown />
@@ -60,7 +76,7 @@ const Header = () => {
                                 <Link to="/" className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm">BLOG</Link>
                             </li>
                             <li>
-                                <Link to="/" className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm">CONTACT</Link>
+                                <Link to="/contact" className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm">CONTACT</Link>
                             </li>
                         </ul>
                     </nav>
