@@ -7,11 +7,11 @@
   padding: 0;
 }
 
-body {
+/* body {
   background-image: url("../img/login-register/login-register-bg.jpg");
   background-size: cover;
   background-position: center;
-}
+} */
 
 textarea:focus, input:focus {
     outline: none;

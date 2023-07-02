@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function Slideshow() {
+function SlideShow() {
   const [slideIndex, setSlideIndex] = useState(0);
 
   const slides = [
@@ -30,4 +30,4 @@ function Slideshow() {
   );
 }
 
-export default Slideshow;
+export default SlideShow;

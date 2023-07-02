@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
-import Slideshow from './slideShow/SlideShow';
-import DateRange from './checkAvailability/CheckAvailability';
-import RoomList from './roomList/RoomList';
-import Gallery from './gallery/Gallery';
+import Slideshow from '../slideShow/SlideShow';
+import DateRange from '../dateRange/DateRange';
+import RoomList from '../roomList/RoomList';
+import Gallery from '../gallery/Gallery';
 import "./Home.css";
 
 

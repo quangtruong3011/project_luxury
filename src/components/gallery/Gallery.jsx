@@ -1,6 +1,5 @@
 import { useState } from "react";
 import classnames from "classnames";
-import './Gallery.css';
 
 const galleryImg = [
     {
