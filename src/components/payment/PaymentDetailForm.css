@@ -16,3 +16,9 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+.bg-16 {
+  background-image: url('https://landing.engotheme.com/html/lotus/demo/images/banner/img-16.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
