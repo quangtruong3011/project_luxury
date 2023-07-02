@@ -11,7 +11,7 @@ const Home = () => {
             <section className="section-slider">
                 <Slideshow />
             </section>
-            <section className="section-check-availability">
+            <section className="section-check-availability absolute bottom-0 z-50 w-full">
                 <DateRange />
             </section>
             <section className="section-accomd">
