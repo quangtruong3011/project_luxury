@@ -5,7 +5,7 @@ import Footer from "../../component/footer/Footer";
 import Slideshow from '../../component/slideShow/SlideShow';
 import DateRange from '../../component/checkAvailability/CheckAvailability';
 import RoomList from '../../component/roomList/RoomList';
-import Gallery from '../../gallery/Gallery';
+import Gallery from '../../component/gallery/Gallery';
 import "./Home.css";
 
 

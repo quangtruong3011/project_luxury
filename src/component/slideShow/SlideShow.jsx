@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-
-const Slideshow = () => {
-  const slides = [
-    "https://landing.engotheme.com/html/lotus/demo/images/slider/img-4.jpg",
-    "https://landing.engotheme.com/html/lotus/demo/images/slider/img-5.jpg"
-  ];
+function Slideshow() {
   const [slideIndex, setSlideIndex] = useState(0);
+
+  const slides = [
+    'https://landing.engotheme.com/html/lotus/demo/images/slider/img-4.jpg',
+    'https://landing.engotheme.com/html/lotus/demo/images/slider/img-5.jpg',
+  ];
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -21,24 +21,13 @@ const Slideshow = () => {
       {slides.map((slide, index) => (
         <div
           key={index}
-          className={`slide ${
-            slideIndex === index ? 'active-slide' : 'inactive-slide'
-          }`}
+          className={`slide ${index === slideIndex ? 'active-slide' : ''}`}
         >
-          <img src={slide} alt={`Slide ${index + 1}`} className="w-full h-auto" />
+          <img src={slide} alt={`Slide ${index + 1}`} />
         </div>
       ))}
     </div>
   );
-};
+}
 
 export default Slideshow;
-// create a new Slideshow
-
-const SlideShow = () => {
-  const imgSlides = [
-    "https://landing.engotheme.com/html/lotus/demo/images/slider/img-4.jpg",
-    "https://landing.engotheme.com/html/lotus/demo/images/slider/img-5.jpg"
-  ];
-
-}
