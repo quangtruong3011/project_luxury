@@ -1,43 +1,45 @@
-import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router"
+import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../context/AuthContext";
 
 import "./Login.css";
 
 function Login() {
   const [formData, setFormData] = useState({
-    name: "",
-    password: "",
+    username: undefined,
+    password: undefined,
   });
 
-  const handleChange = (event) => {
-    setFormData({
-      ...formData,
-      [event.target.name]: event.target.value,
-    });
-  };
+  const { user, loading, error, dispatch } = useContext(AuthContext);
 
   const navigate = useNavigate();
-  
-  const handleSubmit = (event) => {
-    //prevent reload
-    event.preventDefault();
-    //save form data to JSON file
-    saveFormDataToJson(formData);
-    //clear form inputs after submit
-    setFormData({
-      name: "",
-      password: "",
-    });
-    //redirects to homepage
-    navigate('/');
+
+  const handleChange = (e) => {
+    setFormData((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
 
-  const saveFormDataToJson = () => {
-    const users = JSON.parse(localStorage.getItem("users")) || [];
-    users.push(formData);
-    localStorage.setItem("users", JSON.stringify(users));
+  
+  const handleClick = async (e) => {
+    e.preventDefault();
+    dispatch({ type: "LOGIN_START" });
+    try {
+      const res = await axios.post("/auth/login", formData);
+      dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
+      navigate("/")
+    } catch (err) {
+      dispatch({ type: "LOGIN_FAILURE", payload: err.response.data });
+    }
   };
+
+  console.log(user)
+
+  // const saveFormDataToJson = () => {
+  //   const users = JSON.parse(localStorage.getItem("users")) || [];
+  //   users.push(formData);
+  //   localStorage.setItem("users", JSON.stringify(users));
+  // };
 
   return (
     <div className="loginContainer relative pb-32 pt-28">
@@ -54,25 +56,26 @@ function Login() {
             className="userInputBox h-10 w-full border-2 border-solid border-white bg-transparent px-4 text-xs text-white placeholder:text-white"
             type="text"
             placeholder="Username"
-            name="name"
-            value={formData.name}
+            id="username"
+            value={formData.username}
             onChange={handleChange}
           />
           <input
             className="passwordInputBox h-10 w-full border-2 border-solid border-white bg-transparent px-4 text-xs text-white placeholder:text-white"
             type="password"
             placeholder="Password"
-            name="password"
+            id="password"
             value={formData.password}
             onChange={handleChange}
           />
           <button
             className="loginBtn font-semibold my-4 w-44 bg-[#e1bd85] py-2.5 text-base text-white border-2 border-[#e1bd85] hover:bg-white hover:text-[#e1bd85]"
-            onClick={handleSubmit}
-            disabled={!formData.name || !formData.password}
+            onClick={handleClick}
+            disabled={loading}
           >
             LOGIN
           </button>
+          {error && <span>{error.message}</span>}
           <span className="accountDesc text-xs">
             <Link to="/register" className="hover:text-[#e1bd85]">I don't have an account</Link> - <Link to="#" className="hover:text-[#e1bd85]">Forgot password</Link>
           </span>
