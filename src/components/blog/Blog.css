@@ -15,6 +15,19 @@
 /* CSS Tailwind */
 .textss h2 {
     padding-top: 60px !important;
+    margin-top: 20px;
+    margin-bottom: 0;
+    color: #fff;
+    font-size: 35.68px;
+    text-transform: uppercase;
+}
+
+.textss p {
+    margin-bottom: 0;
+    color: #fff;
+    font-size: 20px;
+    line-height: 1.7em;
+    letter-spacing: .02em;
 }
 
 .widget_deal {

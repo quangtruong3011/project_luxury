@@ -7,7 +7,7 @@ function Contact() {
             <section className='section-sub-banner'>
                 <div className="sub-banner">
                     <div className="container">
-                        <div className="text text-center">
+                        <div className="text1 text-center">
                             <h2>CONTACT WITH US</h2>
                             <p>Lorem Ipsum is simply dummy text of the printing</p>
                         </div>
