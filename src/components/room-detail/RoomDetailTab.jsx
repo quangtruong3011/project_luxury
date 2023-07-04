@@ -149,7 +149,7 @@ function RoomDetailTab() {
                                             </div>
                                             <div className='room-package_price col-span-1 text-end'>
                                                 <p className='price'><span className="amout">$260</span> / Package</p>
-                                                <a href="#" className="awe-btn">Book package</a>
+                                                <a href="#" className="awe-btn2">Book package</a>
                                             </div>
                                         </div>
                                     </div>
@@ -161,7 +161,7 @@ function RoomDetailTab() {
                                             </div>
                                             <div className='room-package_price col-span-1 text-end'>
                                                 <p className='price'><span className="amout">$260</span> / Package</p>
-                                                <a href="#" className="awe-btn">Book package</a>
+                                                <a href="#" className="awe-btn2">Book package</a>
                                             </div>
                                         </div>
                                     </div>
@@ -173,7 +173,7 @@ function RoomDetailTab() {
                                             </div>
                                             <div className='room-package_price col-span-1 text-end'>
                                                 <p className='price'><span className="amout">$260</span> / Package</p>
-                                                <a href="#" className="awe-btn">Book package</a>
+                                                <a href="#" className="awe-btn2">Book package</a>
                                             </div>
                                         </div>
                                     </div>

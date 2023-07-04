@@ -1,50 +1,48 @@
-import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router"
+import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../context/AuthContext";
 
 import "./Login.css";
 
 function Login() {
-  const [formData, setFormData] = useState({
-    name: "",
-    password: "",
+  const [credentials, setCredentials] = useState({
+    username: undefined,
+    password: undefined,
   });
 
-  const handleChange = (event) => {
-    setFormData({
-      ...formData,
-      [event.target.name]: event.target.value,
-    });
-  };
+  const { loading, error, dispatch } = useContext(AuthContext);
 
   const navigate = useNavigate();
-  
-  const handleSubmit = (event) => {
-    //prevent reload
-    event.preventDefault();
-    //save form data to JSON file
-    saveFormDataToJson(formData);
-    //clear form inputs after submit
-    setFormData({
-      name: "",
-      password: "",
-    });
-    //redirects to homepage
-    navigate('/');
-  };
 
-  const saveFormDataToJson = () => {
-    const users = JSON.parse(localStorage.getItem("users")) || [];
-    users.push(formData);
-    localStorage.setItem("users", JSON.stringify(users));
+  const handleChange = (e) => {
+    setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
+  
+  const handleClick = async (e) => {
+    e.preventDefault();
+    dispatch({ type: "LOGIN_START" });
+    try {
+      const res = await axios.post("/auth/login", credentials);
+      dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
+      navigate("/")
+    } catch (err) {
+      dispatch({ type: "LOGIN_FAILURE", payload: err.response.data });
+    }
+  };
+  // const saveFormDataToJson = () => {
+  //   const users = JSON.parse(localStorage.getItem("users")) || [];
+  //   users.push(formData);
+  //   localStorage.setItem("users", JSON.stringify(users));
+  // };
 
   return (
     <section className="loginContainer relative pb-[100px] pt-[250px]">
-      {/* <section className="bgOverlay absolute top-0 z-0 h-full w-full bg-[rgba(72,72,72,0.3)]"></section> */}
+      <section className="bgOverlay absolute top-0 z-0 h-full w-full bg-[rgba(72,72,72,0.3)]"></section>
       <div className="formContainer">
         <form
-          className="relative z-10 mx-auto flex w-96 flex-col items-center gap-4 text-white font-[Montserrat]"
+          className="relative z-10 mx-auto flex w-96 flex-col items-center gap-4 font-[Montserrat] text-white"
           action="login"
         >
           <h2 className="mb-5 text-4xl font-semibold text-white">
@@ -54,27 +52,32 @@ function Login() {
             className="userInputBox h-10 w-full border-2 border-solid border-white bg-transparent px-4 text-xs text-white placeholder:text-white"
             type="text"
             placeholder="Username"
-            name="name"
-            value={formData.name}
+            id="username"
             onChange={handleChange}
           />
           <input
             className="passwordInputBox h-10 w-full border-2 border-solid border-white bg-transparent px-4 text-xs text-white placeholder:text-white"
             type="password"
             placeholder="Password"
-            name="password"
-            value={formData.password}
+            id="password"
             onChange={handleChange}
           />
           <button
-            className="loginBtn font-semibold my-4 w-44 bg-[#e1bd85] py-2.5 text-base text-white border-2 border-[#e1bd85] hover:bg-white hover:text-[#e1bd85]"
-            onClick={handleSubmit}
-            disabled={!formData.name || !formData.password}
+            className="loginBtn my-4 w-44 border-2 border-[#e1bd85] bg-[#e1bd85] py-2.5 text-base font-semibold text-white hover:bg-white hover:text-[#e1bd85]"
+            onClick={handleClick}
+            disabled={loading}
           >
             LOGIN
           </button>
+          {error && <span>{error.message}</span>}
           <span className="accountDesc text-xs">
-            <Link to="/register" className="hover:text-[#e1bd85]">I don't have an account</Link> - <Link to="#" className="hover:text-[#e1bd85]">Forgot password</Link>
+            <Link to="/register" className="hover:text-[#e1bd85]">
+              I don't have an account
+            </Link>{" "}
+            -{" "}
+            <Link to="#" className="hover:text-[#e1bd85]">
+              Forgot password
+            </Link>
           </span>
         </form>
       </div>

@@ -6,7 +6,7 @@ import "./Header.css";
 
 const Header = () => {
     const navigateBackHome = useNavigate();
-    const users = localStorage.getItem("users");
+    const user = localStorage.getItem("user");
 
     const [isHeaderTopVisible, setIsHeaderTopVisible] = useState(true);
 
@@ -27,7 +27,7 @@ const Header = () => {
     }, []);
 
     const handleLogout = () => {
-        localStorage.removeItem("users");
+        localStorage.removeItem("user");
         navigateBackHome("/");
     };
 
@@ -73,15 +73,21 @@ const Header = () => {
                     <div className="header-right flex">
                         <span className="login-register">
                             <div className="inline-block">
-                                {users ? (
-                                    <button onClick={handleLogout} className="text-sm text-black px-2">
+                                {user ? (
+                                    <button onClick={handleLogout} className="text-sm text-white hover:bg-[#e1bd85] px-2 py-1">
                                         LOGOUT
                                     </button>
                                 ) : (
                                     <Link to="/login" className="text-sm text-white hover:bg-[#e1bd85] px-2 py-1">LOGIN</Link>
                                 )}
                             </div>
-                            <Link to="/register" className="text-sm text-white hover:bg-[#e1bd85] px-2 py-1">REGISTER</Link>
+                            {user ? (
+                ""
+              ) : (
+                <Link to="/register" className="text-sm text-white hover:bg-[#e1bd85] px-2 py-1">
+                  REGISTER
+                </Link>
+              )}
                         </span>
                     </div>
                 </div>
@@ -97,13 +103,13 @@ const Header = () => {
                                 <Link to="/" className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm">HOME</Link>
                             </li>
                             <li>
-                                <Link to="/" className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm">ABOUT</Link>
+                                <Link to="/about" className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm">ABOUT</Link>
                             </li>
                             <li>
                                 <Link to="/rooms" className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm">ROOM</Link>
                             </li>
                             <li>
-                                <Link to="/" className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm">BLOG</Link>
+                                <Link to="/blog" className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm">BLOG</Link>
                             </li>
                             <li>
                                 <Link to="/contact" className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm">CONTACT</Link>
