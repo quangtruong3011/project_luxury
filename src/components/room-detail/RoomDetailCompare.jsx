@@ -36,7 +36,7 @@ const RoomDetailCompare = () => {
                                     </li>
                                 </ul>
 
-                                <a href="#" className="awe-btn awe-btn-default">
+                                <a href="#" className="awe-btn2 awe-btn-default">
                                     VIEW DETAIL
                                 </a>
                             </div>
@@ -73,7 +73,7 @@ const RoomDetailCompare = () => {
                                     </li>
                                 </ul>
 
-                                <a href="#" className="awe-btn awe-btn-default">
+                                <a href="#" className="awe-btn2 awe-btn-default">
                                     VIEW DETAIL
                                 </a>
                             </div>
@@ -110,7 +110,7 @@ const RoomDetailCompare = () => {
                                     </li>
                                 </ul>
 
-                                <a href="#" className="awe-btn awe-btn-default">
+                                <a href="#" className="awe-btn2 awe-btn-default">
                                     VIEW DETAIL
                                 </a>
                             </div>
@@ -147,7 +147,7 @@ const RoomDetailCompare = () => {
                                     </li>
                                 </ul>
 
-                                <a href="#" className="awe-btn awe-btn-default">
+                                <a href="#" className="awe-btn2 awe-btn-default">
                                     VIEW DETAIL
                                 </a>
                             </div>
