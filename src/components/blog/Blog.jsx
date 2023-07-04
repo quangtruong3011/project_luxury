@@ -113,11 +113,11 @@ function Blog() {
                                         <div className='widget widget_social'>
                                             <h4 className='widget-title'>LOTUS SOCIALS</h4>
                                             <div className='widget-social animate-bounce'>
-                                                <a href="#"><i className="fa-brands fa-pinterest fa-xs"></i></a>
-                                                <a href="#"><i className="fa-brands fa-facebook-f fa-xs"></i></a>
-                                                <a href="#"><i className="fa-brands fa-twitter fa-xs"></i></a>
-                                                <a href="#"><i className="fa-brands fa-google-plus-g fa-xs"></i></a>
-                                                <a href="#"><i className="fa-brands fa-square-instagram fa-xs"></i></a>
+                                                <a href="#"><i className="icon-social fa-brands fa-pinterest fa-xs"></i></a>
+                                                <a href="#"><i className="icon-social fa-brands fa-facebook-f fa-xs"></i></a>
+                                                <a href="#"><i className="icon-social fa-brands fa-twitter fa-xs"></i></a>
+                                                <a href="#"><i className="icon-social fa-brands fa-google-plus-g fa-xs"></i></a>
+                                                <a href="#"><i className="icon-social fa-brands fa-square-instagram fa-xs"></i></a>
                                             </div>
                                         </div>
                                     </div>
