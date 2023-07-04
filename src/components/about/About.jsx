@@ -14,7 +14,7 @@ const About = () => {
     return (
         <>
             <div className="relative flex justify-center items-center">
-                <div className="absolute flex flex-col items-center">
+                <div className="absolute flex flex-col items-center pt-32">
                     <h2 className="text-4xl text-[#fff]">ABOUT LOTUS</h2>
                     <p className="text-xl text-[#fff]">Lorem Ipsum is simply dummy text of the printing</p>
                 </div>

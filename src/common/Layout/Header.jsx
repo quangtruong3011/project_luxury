@@ -74,7 +74,7 @@ const Header = () => {
                         <span className="login-register">
                             <div className="inline-block">
                                 {user ? (
-                                    <button onClick={handleLogout} className="text-sm text-black px-2">
+                                    <button onClick={handleLogout} className="text-sm text-white hover:bg-[#e1bd85] px-2 py-1">
                                         LOGOUT
                                     </button>
                                 ) : (
@@ -84,7 +84,7 @@ const Header = () => {
                             {user ? (
                 ""
               ) : (
-                <Link to="/register" className="px-2 text-sm text-black">
+                <Link to="/register" className="text-sm text-white hover:bg-[#e1bd85] px-2 py-1">
                   REGISTER
                 </Link>
               )}
@@ -103,7 +103,7 @@ const Header = () => {
                                 <Link to="/" className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm">HOME</Link>
                             </li>
                             <li>
-                                <Link to="/" className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm">ABOUT</Link>
+                                <Link to="/about" className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm">ABOUT</Link>
                             </li>
                             <li>
                                 <Link to="/rooms" className="p-5 hover:bg-[#e1bd85] text-[#232323] hover:text-white font-medium text-sm">ROOM</Link>

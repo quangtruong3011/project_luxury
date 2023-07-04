@@ -12,7 +12,7 @@ const Rooms = () => {
     return (
         <>
             <div className="relative flex justify-center items-center">
-                <div className="absolute flex flex-col items-center">
+                <div className="absolute flex flex-col items-center pt-32">
                     <h2 className="text-4xl text-[#fff]">ROOMS &amp; RATES</h2>
                     <p className="text-xl text-[#fff]">Lorem Ipsum is simply dummy text</p>
                 </div>
@@ -42,7 +42,6 @@ const Rooms = () => {
                             <div className="bot flex justify-between">
                                 <span className="text-zinc-500">Starting <span className="ml-1 font-bold text-2xl text-zinc-800">$260</span> /days</span>
                                 <div className="flex justify-between">
-                                    <a className="border-2 px-2.5 py-1.5 text-sm mr-3 bg-[#e1bd85] border-[#e1bd85] hover:bg-white text-white hover:text-[#e1bd85]" href="#">BOOK NOW</a>
                                     <Link to="/room-detail" className="border-2 px-2.5 py-1.5 text-sm bg-[#e1bd85] border-[#e1bd85] hover:bg-white text-white hover:text-[#e1bd85]" href="#">VIEW DETAILS</Link>
                                 </div>
                             </div>
@@ -68,7 +67,6 @@ const Rooms = () => {
                             <div className="bot flex justify-between">
                                 <span className="text-zinc-500">Starting <span className="ml-1 font-bold text-2xl text-zinc-800">$260</span> /days</span>
                                 <div className="flex justify-between">
-                                    <a className="border-2 px-2.5 py-1.5 text-sm mr-3 bg-[#e1bd85] border-[#e1bd85] hover:bg-white text-white hover:text-[#e1bd85]" href="#">BOOK NOW</a>
                                     <Link to="/room-detail" className="border-2 px-2.5 py-1.5 text-sm bg-[#e1bd85] border-[#e1bd85] hover:bg-white text-white hover:text-[#e1bd85]" href="#">VIEW DETAILS</Link>
                                 </div>
                             </div>
@@ -94,7 +92,6 @@ const Rooms = () => {
                             <div className="bot flex justify-between">
                                 <span className="text-zinc-500">Starting <span className="ml-1 font-bold text-2xl text-zinc-800">$260</span> /days</span>
                                 <div className="flex justify-between">
-                                    <a className="border-2 px-2.5 py-1.5 text-sm mr-3 bg-[#e1bd85] border-[#e1bd85] hover:bg-white text-white hover:text-[#e1bd85]" href="#">BOOK NOW</a>
                                     <Link to="/room-detail" className="border-2 px-2.5 py-1.5 text-sm bg-[#e1bd85] border-[#e1bd85] hover:bg-white text-white hover:text-[#e1bd85]" href="#">VIEW DETAILS</Link>
                                 </div>
                             </div>
@@ -120,7 +117,6 @@ const Rooms = () => {
                             <div className="bot flex justify-between">
                                 <span className="text-zinc-500">Starting <span className="ml-1 font-bold text-2xl text-zinc-800">$260</span> /days</span>
                                 <div className="flex justify-between">
-                                    <a className="border-2 px-2.5 py-1.5 text-sm mr-3 bg-[#e1bd85] border-[#e1bd85] hover:bg-white text-white hover:text-[#e1bd85]" href="#">BOOK NOW</a>
                                     <Link to="/room-detail" className="border-2 px-2.5 py-1.5 text-sm bg-[#e1bd85] border-[#e1bd85] hover:bg-white text-white hover:text-[#e1bd85]" href="#">VIEW DETAILS</Link>
                                 </div>
                             </div>
