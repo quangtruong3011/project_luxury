@@ -7,8 +7,8 @@
   padding: 0;
 }
 
-.registerContainer{
-  background-image: url("../img/login-register/login-register-bg.jpg");
+.section-account{
+  background-image: url("https://landing.engotheme.com/html/lotus/demo/images/banner/img-11.jpg");
   background-size: cover;
   background-position: center;
 }

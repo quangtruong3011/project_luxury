@@ -9,18 +9,18 @@
 }
 
 .sub-banner {
-    height: 300px;
+    padding-top: 75px;
 }
 
-.sub-banner .text h2 {
-    padding-top: 100px;
+.sub-banner .text1 h2 {
+    padding-top: 50px;
     margin-top: 0;
     margin-bottom: 0;
     color: #fff;
     font-size: 35.68px;
 }
 
-.sub-banner .text p {
+.sub-banner .text1 p {
     margin-bottom: 0;
     color: #fff;
     font-size: 20px;
@@ -31,7 +31,7 @@
     visibility: visible;
 }
 
-.awe-btn {
+.awe-btn1 {
     width: 200px;
     padding-top: 12px;
     padding-bottom: 12px;

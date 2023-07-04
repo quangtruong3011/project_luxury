@@ -10,7 +10,7 @@ function DateInput(props) {
 
   return (
     <div className="mr-2">
-      <label className="block text-gray-700 font-bold mb-2" htmlFor={props.name}>
+      <label className="block text-gray-700 font-bold mb-2 text-white" htmlFor={props.name}>
         {props.label}
       </label>
       <input
@@ -68,9 +68,9 @@ const DateRange = (props) => {
   }
 
   return (
-    <div>
+    <div className="bg-black/60 py-2">
       <div className="container flex justify-between items-center">
-        <div className="flex items-center">
+        <div className="flex items-center text-white">
           <i class="fa-solid fa-check border-2 border-[#e1bd85] text-[#e1bd85] font-bold rounded-full p-3 mr-2"></i>
           <h2 className="uppercase font-bold text-2xl">check <br /> Availability</h2>
         </div>
@@ -91,7 +91,7 @@ const DateRange = (props) => {
               onChange={handleDepartureDateChange}
             />
             <div className="mr-2">
-              <label className="block text-gray-700 font-bold mb-2" htmlFor="adults">
+              <label className="block text-gray-700 font-bold mb-2 text-white" htmlFor="adults">
                 Adults
               </label>
               <input
@@ -104,7 +104,7 @@ const DateRange = (props) => {
               />
             </div>
             <div className="mr-2">
-              <label className="block text-gray-700 font-bold mb-2" htmlFor="children">
+              <label className="block text-gray-700 font-bold mb-2 text-white" htmlFor="children">
                 Children
               </label>
               <input

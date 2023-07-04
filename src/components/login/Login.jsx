@@ -38,9 +38,9 @@ function Login() {
   // };
 
   return (
-    <div className="loginContainer relative pb-32 pt-28">
-      <section className="bgOverlay absolute top-0 z-0 h-full w-full bg-[rgba(72,72,72,0.3)]"></section>
-      <section className="formContainer">
+    <section className="loginContainer relative pb-[100px] pt-[250px]">
+      {/* <section className="bgOverlay absolute top-0 z-0 h-full w-full bg-[rgba(72,72,72,0.3)]"></section> */}
+      <div className="formContainer">
         <form
           className="relative z-10 mx-auto flex w-96 flex-col items-center gap-4 font-[Montserrat] text-white"
           action="login"
@@ -80,8 +80,8 @@ function Login() {
             </Link>
           </span>
         </form>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }
 

@@ -87,9 +87,9 @@ function PaymentDetailForm() {
     <div className="relative">
       <section className="topBanner bg-16 pt-20">
         <div className="awe-overlay"></div>
-        <div className="sub-banner">
+        <div className="sub-banners">
           <div className="container">
-            <div className="text text-center font-[montserrat]">
+            <div className="texts text-center font-[montserrat]">
               <h2>RESERVATION</h2>
               <p>Lorem Ipsum is simply dummy text</p>
             </div>

@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import "./RoomDetailForm.css";
+
 function RoomDetailForm() {
   const [arriveDate, setArriveDate] = useState('');
   const [departureDate, setDepartureDate] = useState('');
   const [adults, setAdults] = useState(0);
   const [children, setChildren] = useState(0);
-
+  const price = '260';
   const handleArriveDateChange = (e) => {
     setArriveDate(e.target.value);
   };
@@ -14,7 +15,7 @@ function RoomDetailForm() {
     setDepartureDate(e.target.value);
   };
 
-  const handleAdultsChange = (e) => {
+  const handleAdultsChange = (e) => {  
     setAdults(e.target.value);
   };
 
@@ -23,8 +24,15 @@ function RoomDetailForm() {
   };
 
   const handleBookNowClick = () => {
-    // Xử lý logic khi nhấn nút "Book Now"
-    // Ví dụ: gửi dữ liệu form lên server để đặt phòng
+    // Lưu thông tin vào localStorage
+    localStorage.setItem('arriveDate', arriveDate);
+    localStorage.setItem('departureDate', departureDate);
+    localStorage.setItem('adults', adults);
+    localStorage.setItem('children', children);
+    localStorage.setItem(price, price);
+
+    // Chuyển sang trang checkout
+    window.location.href = '/checkout';
   };
 
   return (

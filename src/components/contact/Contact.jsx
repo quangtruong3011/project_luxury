@@ -7,7 +7,7 @@ function Contact() {
             <section className='section-sub-banner'>
                 <div className="sub-banner">
                     <div className="container">
-                        <div className="text text-center">
+                        <div className="text1 text-center">
                             <h2>CONTACT WITH US</h2>
                             <p>Lorem Ipsum is simply dummy text of the printing</p>
                         </div>
@@ -47,7 +47,7 @@ function Contact() {
                                                 <textarea cols="85" rows="10" name="message" className="field-textarea" placeholder="Write what do you want"></textarea>
                                             </div>
                                             <div className="col-span-2 sm:col-span-1">
-                                                <button type="submit" className="awe-btn awe-btn-13">SEND</button>
+                                                <button type="submit" className="awe-btn1 awe-btn-13">SEND</button>
                                             </div>
                                         </div>
                                         <div id="contact-content"></div>
@@ -58,7 +58,6 @@ function Contact() {
                         </div>
                     </div>
                 </div>
-
             </section>
         </div>
     )
