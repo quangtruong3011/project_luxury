@@ -20,27 +20,6 @@ function RoomDetailForm() {
 
   const navigate = useNavigate();
 
-  // const [arriveDate, setArriveDate] = useState('');
-  // const [departureDate, setDepartureDate] = useState('');
-  // const [adults, setAdults] = useState(0);
-  // const [children, setChildren] = useState(0);
-  // const price = '260';
-  // const handleArriveDateChange = (e) => {
-  //   setArriveDate(e.target.value);
-  // };
-
-  // const handleDepartureDateChange = (e) => {
-  //   setDepartureDate(e.target.value);
-  // };
-
-  // const handleAdultsChange = (e) => {  
-  //   setAdults(e.target.value);
-  // };
-
-  // const handleChildrenChange = (e) => {
-  //   setChildren(e.target.value);
-  // };
-
   const saveFormDataToJson = () => {
     localStorage.setItem("reserveDetails", JSON.stringify(formData));
   };
@@ -60,7 +39,6 @@ function RoomDetailForm() {
         <input
           type="date"
           id="arriveDate"
-          // value={arriveDate}
           onChange={handleChange}
         />
       </div>
@@ -69,7 +47,6 @@ function RoomDetailForm() {
         <input
           type="date"
           id="departureDate"
-          // value={departureDate}
           onChange={handleChange}
         />
       </div>
@@ -78,7 +55,6 @@ function RoomDetailForm() {
         <input
           type="number"
           id="adults"
-          // value={adults}
           onChange={handleChange}
         />
       </div>
@@ -87,7 +63,6 @@ function RoomDetailForm() {
         <input
           type="number"
           id="children"
-          // value={children}
           onChange={handleChange}
         />
       </div>
