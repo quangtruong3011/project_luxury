@@ -6,7 +6,7 @@ import "./Header.css";
 
 const Header = () => {
     const navigateBackHome = useNavigate();
-    const users = localStorage.getItem("users");
+    const user = localStorage.getItem("user");
 
     const [isHeaderTopVisible, setIsHeaderTopVisible] = useState(true);
 
@@ -27,7 +27,7 @@ const Header = () => {
     }, []);
 
     const handleLogout = () => {
-        localStorage.removeItem("users");
+        localStorage.removeItem("user");
         navigateBackHome("/");
     };
 
@@ -73,7 +73,7 @@ const Header = () => {
                     <div className="header-right flex">
                         <span className="login-register">
                             <div className="inline-block">
-                                {users ? (
+                                {user ? (
                                     <button onClick={handleLogout} className="text-sm text-black px-2">
                                         LOGOUT
                                     </button>
@@ -81,7 +81,13 @@ const Header = () => {
                                     <Link to="/login" className="text-sm text-white hover:bg-[#e1bd85] px-2 py-1">LOGIN</Link>
                                 )}
                             </div>
-                            <Link to="/register" className="text-sm text-white hover:bg-[#e1bd85] px-2 py-1">REGISTER</Link>
+                            {user ? (
+                ""
+              ) : (
+                <Link to="/register" className="px-2 text-sm text-black">
+                  REGISTER
+                </Link>
+              )}
                         </span>
                     </div>
                 </div>

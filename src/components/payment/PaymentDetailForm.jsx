@@ -4,9 +4,9 @@ import { Routes, Route, Link } from "react-router-dom";
 import "./PaymentDetailForm.css";
 import "./BillDetailTitles";
 import BillDetailTitles from "./BillDetailTitles";
+import Bill from "./Bill";
 
 function PaymentDetailForm() {
-
   //handle country selection
   const countries = ["Viet Nam", "USA", "Canada", "UK", "Japan", "China"];
   const [selectedCountry, setSelectedCountry] = useState("");
@@ -60,11 +60,15 @@ function PaymentDetailForm() {
       orderNotes: "",
       paymentMethod: "",
     });
+    setTimeout(function() {
+      document.querySelector(".roomBill").style.display = "flex";
+    }, 1000)
   };
 
   //save form data to JSON
   const saveFormDataToJson = () => {
-    const billingDetails = JSON.parse(localStorage.getItem("billingDetails")) || [];
+    const billingDetails =
+      JSON.parse(localStorage.getItem("billingDetails")) || [];
     billingDetails.push(formData);
     localStorage.setItem("billingDetails", JSON.stringify(billingDetails));
   };
@@ -80,8 +84,8 @@ function PaymentDetailForm() {
   // }, []);
 
   return (
-    <>
-      <section className="topBanner bg-16 pt-20 ">
+    <div className="relative">
+      <section className="topBanner bg-16 pt-20">
         <div className="awe-overlay"></div>
         <div className="sub-banners">
           <div className="container">
@@ -91,6 +95,9 @@ function PaymentDetailForm() {
             </div>
           </div>
         </div>
+      </section>
+      <section className="roomBill hidden fixed left-0 top-0 z-10 h-full w-full items-center justify-center bg-slate-400 bg-opacity-60">
+        <Bill></Bill>
       </section>
       <section className="bodyContents flex flex-col items-center bg-white pb-16 pt-8">
         <div className="grid w-2/3 grid-cols-3 font-[hind]">
@@ -301,7 +308,7 @@ function PaymentDetailForm() {
                 <div className="grid grid-cols-1 grid-rows-6">
                   <input
                     placeholder="Notes about your order, e.g. special notes for delivery"
-                    className="w-full h-full"
+                    className="h-full w-full"
                     type="text"
                     name="orderNotes"
                     value={formData.orderNotes}
@@ -317,7 +324,7 @@ function PaymentDetailForm() {
               </Link>
             </p>
             <ul className="flex flex-col gap-5">
-              <li className="font-[montserrat] text-sm font-semibold text-black flex flex-row items-center gap-2">
+              <li className="flex flex-row items-center gap-2 font-[montserrat] text-sm font-semibold text-black">
                 <input
                   type="radio"
                   name="paymentMethod"
@@ -332,7 +339,7 @@ function PaymentDetailForm() {
                 />
                 DIRECT BANK TRANSFER
               </li>
-              <li className="font-[montserrat] text-sm font-semibold text-black flex flex-row items-center gap-2">
+              <li className="flex flex-row items-center gap-2 font-[montserrat] text-sm font-semibold text-black">
                 <input
                   type="radio"
                   name="paymentMethod"
@@ -347,7 +354,7 @@ function PaymentDetailForm() {
                 />
                 CHEQUE PAYMENT
               </li>
-              <li className="font-[montserrat] text-sm font-semibold text-black flex flex-row items-center gap-2">
+              <li className="flex flex-row items-center gap-2 font-[montserrat] text-sm font-semibold text-black">
                 <input
                   type="radio"
                   name="paymentMethod"
@@ -360,7 +367,11 @@ function PaymentDetailForm() {
                     })
                   }
                 />
-                CREDIT CARD <img src="https://landing.engotheme.com/html/lotus/demo/images/icon-card.jpg" alt="card-types" />
+                CREDIT CARD{" "}
+                <img
+                  src="https://landing.engotheme.com/html/lotus/demo/images/icon-card.jpg"
+                  alt="card-types"
+                />
               </li>
             </ul>
             <button
@@ -380,7 +391,7 @@ function PaymentDetailForm() {
           </section>
         </div>
       </section>
-    </>
+    </div>
   );
 }
 
