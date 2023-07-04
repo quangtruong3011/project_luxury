@@ -29,7 +29,7 @@ function Bill() {
               ROOM FOR
             </h5>
             <span>
-              {getReserveDetails.adults} Adult, {getReserveDetails.children}{" "}
+              {getReserveDetails ? getReserveDetails.adults : ""} Adult, {getReserveDetails ? getReserveDetails.children : ""}{" "}
               Child
             </span>
           </li>
@@ -39,13 +39,13 @@ function Bill() {
             <li className="flex justify-between text-sm">
               <span>Arrive date</span>
               <span className="font-semibold">
-                {getReserveDetails.arriveDate}
+                {getReserveDetails ? getReserveDetails.arriveDate : ""}
               </span>
             </li>
             <li className="flex justify-between text-sm">
               <span>Depart date</span>
               <span className="font-semibold">
-                {getReserveDetails.departureDate}
+                {getReserveDetails ? getReserveDetails.departureDate : ""}
               </span>
             </li>
           </>
@@ -57,40 +57,40 @@ function Bill() {
             <li className="flex justify-between text-sm">
               <span>Customer's name</span>
               <span className="font-semibold">
-                {getBillDetails.firtName} {getBillDetails.lastName}
+                {getBillDetails ? getBillDetails.firstName : ""} {getBillDetails ? getBillDetails.lastName : ""}
               </span>
             </li>
             <li className="flex justify-between text-sm">
               <span>Company name</span>
               <span className="font-semibold">
-                {getBillDetails.company || null}
+                {getBillDetails ? getBillDetails.companyName : ""}
               </span>
             </li>
             <li className="flex justify-between text-sm">
               <span>Address</span>
               <span className="font-semibold">
-                {getBillDetails.apartment || null} {getBillDetails.street}{" "}
-                {getBillDetails.townCity} {getBillDetails.country}
+                {getBillDetails ? getBillDetails.apartment : ""} {getBillDetails ? getBillDetails.street : ""}{" "}
+                {getBillDetails ? getBillDetails.townCity : ""} {getBillDetails ? getBillDetails.country : ""}
               </span>
             </li>
             <li className="flex justify-between text-sm">
               <span>Email</span>
-              <span className="font-semibold">{getBillDetails.email}</span>
+              <span className="font-semibold">{getBillDetails ? getBillDetails.email : ""}</span>
             </li>
             <li className="flex justify-between text-sm">
               <span>Phone</span>
-              <span className="font-semibold">{getBillDetails.phone}</span>
+              <span className="font-semibold">{getBillDetails ? getBillDetails.phone : ""}</span>
             </li>
             <li className="flex justify-between text-sm">
               <span>Order notes</span>
               <span className="font-semibold">
-                {getBillDetails.orderNotes || null}
+                {getBillDetails ? getBillDetails.orderNotes : ""}
               </span>
             </li>
             <li className="flex justify-between text-sm">
               <span>Payment method</span>
               <span className="font-semibold">
-                {getBillDetails.paymentMethod}
+                {getBillDetails ? getBillDetails.paymentMethod : ""}
               </span>
             </li>
           </>
@@ -100,7 +100,7 @@ function Bill() {
         <h4 className="font-[montserrat] font-bold text-white">TOTAL PAID</h4>
         <h4 className="font-[montserrat] font-bold text-white">
           $
-          {(getReserveDetails.price + getReserveDetails.price * 0.1) * diffDays}
+          {getReserveDetails ? (getReserveDetails.price + getReserveDetails.price * 0.1) * diffDays : "" }
           .00
         </h4>
       </div>

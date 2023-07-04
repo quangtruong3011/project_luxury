@@ -69,7 +69,7 @@ function Login() {
           >
             LOGIN
           </button>
-          {error && <span>{error.message}</span>}
+          {error && <span className="bg-white bg-opacity-80 rounded-lg border-2 border-red-500 text-red-500 p-1 font-bold">{error.message}</span>}
           <span className="accountDesc text-xs">
             <Link to="/register" className="hover:text-[#e1bd85]">
               I don't have an account

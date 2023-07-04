@@ -242,7 +242,7 @@ function PaymentDetailForm() {
                 <BillDetailTitles title="FIRST NAME" mustFill={true}>
                   <input
                     type="text"
-                    className="w-full"
+                    className="w-full capitalize"
                     name="firstName"
                     value={formData.firstName}
                     onChange={handleChange}
@@ -251,7 +251,7 @@ function PaymentDetailForm() {
                 <BillDetailTitles title="LAST NAME" mustFill={true}>
                   <input
                     type="text"
-                    className="w-full"
+                    className="w-full capitalize"
                     name="lastName"
                     value={formData.lastName}
                     onChange={handleChange}
@@ -261,7 +261,7 @@ function PaymentDetailForm() {
               <BillDetailTitles title="COMPANY NAME">
                 <input
                   type="text"
-                  className="w-full"
+                  className="w-full capitalize"
                   name="companyName"
                   value={formData.companyName}
                   onChange={handleChange}
@@ -271,7 +271,7 @@ function PaymentDetailForm() {
                 <input
                   type="text"
                   placeholder="Street Address"
-                  className="w-full"
+                  className="w-full capitalize"
                   name="street"
                   value={formData.street}
                   onChange={handleChange}
@@ -281,7 +281,7 @@ function PaymentDetailForm() {
                 <input
                   type="text"
                   placeholder="Apartment, suite, unit etc. (Optional)"
-                  className="w-full"
+                  className="w-full capitalize"
                   name="apartment"
                   value={formData.apartment}
                   onChange={handleChange}
@@ -291,7 +291,7 @@ function PaymentDetailForm() {
                 <BillDetailTitles title="TOWN / CITY" mustFill={true}>
                   <input
                     type="text"
-                    className="w-full"
+                    className="w-full capitalize"
                     name="townCity"
                     value={formData.townCity}
                     onChange={handleChange}

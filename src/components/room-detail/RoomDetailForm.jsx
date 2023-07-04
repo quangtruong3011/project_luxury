@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./RoomDetailForm.css";
 
@@ -26,47 +26,42 @@ function RoomDetailForm() {
 
   const handleBookNowClick = () => {
     // Lưu thông tin vào localStorage
-    saveFormDataToJson(formData)
+    saveFormDataToJson(formData);
 
     // Chuyển sang trang checkout
-    navigate('/checkout');
+    navigate("/checkout");
   };
 
   return (
     <div className="room-detail">
       <div className="form-group">
         <label htmlFor="arriveDate">Arrive Date:</label>
-        <input
-          type="date"
-          id="arriveDate"
-          onChange={handleChange}
-        />
+        <input type="date" id="arriveDate" onChange={handleChange} />
       </div>
       <div className="form-group">
         <label htmlFor="departureDate">Departure Date:</label>
-        <input
-          type="date"
-          id="departureDate"
-          onChange={handleChange}
-        />
+        <input type="date" id="departureDate" onChange={handleChange} />
       </div>
       <div className="form-group">
         <label htmlFor="adults">Adults:</label>
-        <input
-          type="number"
-          id="adults"
-          onChange={handleChange}
-        />
+        <input type="number" id="adults" onChange={handleChange} />
       </div>
       <div className="form-group">
         <label htmlFor="children">Children:</label>
-        <input
-          type="number"
-          id="children"
-          onChange={handleChange}
-        />
+        <input type="number" id="children" onChange={handleChange} />
       </div>
-      <button className='booking' onClick={handleBookNowClick}>Book Now</button>
+      <button
+        className="booking"
+        onClick={handleBookNowClick}
+        disabled={
+          !formData.arriveDate ||
+          !formData.departureDate ||
+          !formData.adults ||
+          !formData.children
+        }
+      >
+        Book Now
+      </button>
     </div>
   );
 }
