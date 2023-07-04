@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+// import { useHistory } from "react-router-dom";
 import "./Register.css";
 
 function Register() {
@@ -41,11 +42,11 @@ function Register() {
     users.push(formData);
     localStorage.setItem("users", JSON.stringify(users));
   };
-
+  // const history = useHistory();
+  // history.push("/login");
   return (
     <section className="section-account">
       <div className="registerContainer relative pb-[100px] pt-[250px]">
-        {/* <div className="bgOverlay absolute top-0 z-0 h-full w-full bg-[rgba(72,72,72,0.3)]"></div> */}
         <form
           className="relative z-10 mx-auto flex w-96 flex-col items-center gap-4 font-[Montserrat] text-white"
           action="register"
