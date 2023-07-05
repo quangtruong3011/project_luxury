@@ -31,6 +31,7 @@ const Header = () => {
         navigateBackHome("/");
     };
 
+    const isLoggedIn = !!user;
     return (
         <header>
             <div className={`header-top py-1 ${isHeaderTopVisible ? "" : "hidden"} bg-transparent`}>
@@ -73,7 +74,7 @@ const Header = () => {
                     <div className="header-right flex">
                         <span className="login-register">
                             <div className="inline-block">
-                                {user ? (
+                                {isLoggedIn ? (
                                     <button onClick={handleLogout} className="text-sm text-white hover:bg-[#e1bd85] px-2 py-1">
                                         LOGOUT
                                     </button>
@@ -81,13 +82,11 @@ const Header = () => {
                                     <Link to="/login" className="text-sm text-white hover:bg-[#e1bd85] px-2 py-1">LOGIN</Link>
                                 )}
                             </div>
-                            {user ? (
-                ""
-              ) : (
-                <Link to="/register" className="text-sm text-white hover:bg-[#e1bd85] px-2 py-1">
-                  REGISTER
-                </Link>
-              )}
+                            {!isLoggedIn && (
+                                <Link to="/register" className="text-sm text-white hover:bg-[#e1bd85] px-2 py-1">
+                                    REGISTER
+                                </Link>
+                            )}
                         </span>
                     </div>
                 </div>

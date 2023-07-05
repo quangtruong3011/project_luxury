@@ -1,7 +1,9 @@
 import { createContext, useEffect, useReducer } from "react";
 
+const savedUser = JSON.parse(localStorage.getItem("user"));
+
 const INITIAL_STATE = {
-  user: JSON.parse(localStorage.getItem("user")) || null,
+  user: savedUser || null,
   loading: false,
   error: null,
 };
@@ -12,24 +14,26 @@ const AuthReducer = (state, action) => {
   switch (action.type) {
     case "LOGIN_START":
       return {
-        user: null,
+        ...state,
         loading: true,
         error: null,
       };
     case "LOGIN_SUCCESS":
       return {
+        ...state,
         user: action.payload,
         loading: false,
         error: null,
       };
     case "LOGIN_FAILURE":
       return {
-        user: null,
+        ...state,
         loading: false,
         error: action.payload,
       };
     case "LOGOUT":
       return {
+        ...state,
         user: null,
         loading: false,
         error: null,
@@ -42,11 +46,15 @@ const AuthReducer = (state, action) => {
 export const AuthContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AuthReducer, INITIAL_STATE);
 
-  console.log(state.user)
+  console.log(state.user);
   
   useEffect(() => {
     localStorage.setItem("user", JSON.stringify(state.user));
   }, [state.user]);
+
+  useEffect(() => {
+    localStorage.removeItem("user");
+  }, []);
 
   return (
     <AuthContext.Provider
