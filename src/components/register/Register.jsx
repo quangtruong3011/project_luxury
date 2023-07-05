@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import "./Register.css";
 
 function Register() {
+  const navigate = useNavigate(); 
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -29,16 +30,14 @@ function Register() {
   };
 
   const handleSubmit = (event) => {
-    //prevent reload
     event.preventDefault();
-    //save form data to JSON file
     saveFormDataToJson(formData);
-    //clear form inputs after submit
     setFormData({
       name: "",
       email: "",
       password: "",
     });
+    navigate("/login");
   };
 
   const saveFormDataToJson = () => {

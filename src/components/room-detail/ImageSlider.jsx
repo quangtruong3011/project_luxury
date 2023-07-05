@@ -26,8 +26,8 @@ const ImageSlider = ({ images }) => {
                 <i className="fa fa-chevron-left"></i>
             </button>
             <div className='image-content relative'>
-                <img className="slide-image" src={images[currentSlide]} alt={`Slide ${currentSlide}`} />
-                <h6>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h6>
+                <img className="slide-image w-full" src={images[currentSlide]} alt={`Slide ${currentSlide}`} />
+                <h6 >Lorem Ipsum is simply dummy text of the printing and typesetting industry</h6>
             </div>
             <button className="next-button" onClick={nextSlide}>
                 <i className="fa fa-chevron-right"></i>

@@ -1,41 +1,41 @@
-import axios from "axios";
 import { Link } from "react-router-dom";
-import { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../../context/AuthContext";
-
+import { useState } from "react";
 import "./Login.css";
 
 function Login() {
   const [credentials, setCredentials] = useState({
-    username: undefined,
-    password: undefined,
+    username: "",
+    password: ""
   });
 
-  const { loading, error, dispatch } = useContext(AuthContext);
-
-  const navigate = useNavigate();
+  const [error, setError] = useState("");
 
   const handleChange = (e) => {
     setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
-  
-  const handleClick = async (e) => {
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch({ type: "LOGIN_START" });
-    try {
-      const res = await axios.post("/auth/login", credentials);
-      dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
-      navigate("/")
-    } catch (err) {
-      dispatch({ type: "LOGIN_FAILURE", payload: err.response.data });
+    const savedUsers = JSON.parse(localStorage.getItem("users"));
+
+    if (savedUsers) {
+      const matchedUser = savedUsers.find(
+        (user) =>
+          user.username === credentials.name && user.password === credentials.password
+      );
+
+      if (matchedUser) {
+        setError("");
+        localStorage.setItem("isLoggedIn", true);
+        window.location.href = "/";
+      } else {
+        setError("Invalid username or password");
+      }
+    } else {
+      setError("No users found. Please register first.");
     }
   };
-  // const saveFormDataToJson = () => {
-  //   const users = JSON.parse(localStorage.getItem("users")) || [];
-  //   users.push(formData);
-  //   localStorage.setItem("users", JSON.stringify(users));
-  // };
+
 
   return (
     <section className="loginContainer relative pb-[100px] pt-[250px]">
@@ -44,6 +44,7 @@ function Login() {
         <form
           className="relative z-10 mx-auto flex w-96 flex-col items-center gap-4 font-[Montserrat] text-white"
           action="login"
+          onSubmit={handleSubmit}
         >
           <h2 className="mb-5 text-4xl font-semibold text-white">
             LOGIN ACCOUNT
@@ -53,6 +54,7 @@ function Login() {
             type="text"
             placeholder="Username"
             id="username"
+            value={credentials.username}
             onChange={handleChange}
           />
           <input
@@ -60,16 +62,16 @@ function Login() {
             type="password"
             placeholder="Password"
             id="password"
+            value={credentials.password}
             onChange={handleChange}
           />
           <button
             className="loginBtn my-4 w-44 border-2 border-[#e1bd85] bg-[#e1bd85] py-2.5 text-base font-semibold text-white hover:bg-white hover:text-[#e1bd85]"
-            onClick={handleClick}
-            disabled={loading}
+            type="submit"
           >
             LOGIN
           </button>
-          {error && <span className="bg-white bg-opacity-80 rounded-lg border-2 border-red-500 text-red-500 p-1 font-bold">{error.message}</span>}
+          {error && <span>{error}</span>}
           <span className="accountDesc text-xs">
             <Link to="/register" className="hover:text-[#e1bd85]">
               I don't have an account
